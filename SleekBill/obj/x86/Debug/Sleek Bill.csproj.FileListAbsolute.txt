@@ -1,0 +1,17 @@
+G:\Projects\Sleek Bill\Sleek Bill\bin\Debug\Sleek Bill.exe
+G:\Projects\Sleek Bill\Sleek Bill\bin\Debug\Sleek Bill.pdb
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Properties.Resources.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek Bill.csproj.GenerateResource.Cache
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek Bill.exe
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek Bill.pdb
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek Bill.csprojResolveAssemblyReference.cache
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill_Company.AddCompanyDetails.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.SleekBillParentContainer.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Clients.ClientsReport.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Clients.AddNewClient.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Products.AddEditProduct.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Products.ProductServiceReport.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.INvoices.AddTaxes.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Invoices.EditTax.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Invoices.InvoicesReport.resources
+G:\Projects\Sleek Bill\Sleek Bill\obj\x86\Debug\Sleek_Bill.Invoices.AddEditInvoice.resources

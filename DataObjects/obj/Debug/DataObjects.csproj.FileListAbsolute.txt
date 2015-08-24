@@ -1,0 +1,15 @@
+G:\Projects\SleekBill\DataObjects\obj\Debug\DataObjects.csprojResolveAssemblyReference.cache
+G:\Projects\SleekBill\DataObjects\bin\Debug\DataObjects.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\DataObjects.pdb
+G:\Projects\SleekBill\DataObjects\bin\Debug\DataObjectHelpers.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\DataObjectHelpers.pdb
+G:\Projects\SleekBill\DataObjects\obj\Debug\DataObjects.dll
+G:\Projects\SleekBill\DataObjects\obj\Debug\DataObjects.pdb
+G:\Projects\SleekBill\DataObjects\bin\Debug\BusinessObjects.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.DataObjects.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.SST.BusinessObjects.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.DataObjectHelpers.dll
+G:\Projects\SleekBill\DataObjects\bin\Debug\BusinessObjects.pdb
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.DataObjects.pdb
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.SST.BusinessObjects.pdb
+G:\Projects\SleekBill\DataObjects\bin\Debug\TDG.DataObjectHelpers.pdb

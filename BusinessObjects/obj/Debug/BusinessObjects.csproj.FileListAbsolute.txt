@@ -1,0 +1,4 @@
+G:\Projects\SleekBill\BusinessObjects\bin\Debug\BusinessObjects.dll
+G:\Projects\SleekBill\BusinessObjects\bin\Debug\BusinessObjects.pdb
+G:\Projects\SleekBill\BusinessObjects\obj\Debug\BusinessObjects.dll
+G:\Projects\SleekBill\BusinessObjects\obj\Debug\BusinessObjects.pdb
