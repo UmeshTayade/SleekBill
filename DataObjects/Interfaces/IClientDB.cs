@@ -8,7 +8,8 @@ namespace DataObjects.Interfaces
     {
         int AddClient(Client client);
         List<Client> GetAllClients();
-        Client GetClient(int ClientId);
+        Client GetClient(int clientId);
         void UpdateClient(Client client);
+        void DeactivateClient(int clientId);
     }
 }

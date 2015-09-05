@@ -2,11 +2,16 @@
 
 namespace DataObjects.ADO.Net
 {
-    class ADONETDaoFactory : DataFactory
+    public class ADONETDaoFactory : DataFactory
     {
         public override IClientDB clientDB
         {
             get { return new ClientDBHelper(); }
+        }
+
+        public override IMasterDB masterDB
+        {
+            get { return new MasterDBHelper(); }
         }
     }
 }

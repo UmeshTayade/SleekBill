@@ -44,8 +44,20 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TDG.Sidel.Web">
+      <HintPath>C:\Users\LENOVO\Downloads\SidelPublish08102012\bin\TDG.Sidel.Web.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\FormState.cs" />
+    <Compile Include="Controls\CustomImages.cs" />
+    <Compile Include="Controls\CustomMessageBox.cs" />
+    <Compile Include="Controls\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoices\AddEditInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,9 @@
     <Compile Include="SleekBillParentContainer.Designer.cs">
       <DependentUpon>SleekBillParentContainer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoices\AddEditInvoice.resx">
       <DependentUpon>AddEditInvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +165,7 @@
     <EmbeddedResource Include="SleekBillParentContainer.resx">
       <DependentUpon>SleekBillParentContainer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,6 +178,219 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Android-Lollipop-wallpapers-g.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj">
+      <Project>{46257E78-2B13-4B76-8375-C9F88F665EF5}</Project>
+      <Name>BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataServices\DataServices.csproj">
+      <Project>{7EB72E41-B67A-49A4-972C-D9B8AD8C707D}</Project>
+      <Name>DataServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\buttons\add.png" />
+    <Content Include="Images\buttons\adown.png" />
+    <Content Include="Images\buttons\arrow-down.png" />
+    <Content Include="Images\buttons\arrow_down_ico.png" />
+    <Content Include="Images\buttons\arrow_up_ico.png" />
+    <Content Include="Images\buttons\aup.png" />
+    <Content Include="Images\buttons\backup_img.png" />
+    <Content Include="Images\buttons\Box_add.png" />
+    <Content Include="Images\buttons\Box_view.png" />
+    <Content Include="Images\buttons\Calendar.png" />
+    <Content Include="Images\buttons\coins.png" />
+    <Content Include="Images\buttons\copy.png" />
+    <Content Include="Images\buttons\cross-small-disable.png" />
+    <Content Include="Images\buttons\cross-small-enable.png" />
+    <Content Include="Images\buttons\cross-small.png" />
+    <Content Include="Images\buttons\Cross.png" />
+    <Content Include="Images\buttons\disks.gif" />
+    <Content Include="Images\buttons\edit-icon.png" />
+    <Content Include="Images\buttons\email.png" />
+    <Content Include="Images\buttons\error.png" />
+    <Content Include="Images\buttons\Exit.png" />
+    <Content Include="Images\buttons\fontminus.png" />
+    <Content Include="Images\buttons\fontplus.png" />
+    <Content Include="Images\buttons\get.png" />
+    <Content Include="Images\buttons\geth.png" />
+    <Content Include="Images\buttons\happy.png" />
+    <Content Include="Images\buttons\ico_calendar.png" />
+    <Content Include="Images\buttons\ico_check.png" />
+    <Content Include="Images\buttons\ico_help.png" />
+    <Content Include="Images\buttons\ico_right.png" />
+    <Content Include="Images\buttons\Key.png" />
+    <Content Include="Images\buttons\Left.png" />
+    <Content Include="Images\buttons\Left_last.png" />
+    <Content Include="Images\buttons\lock.png" />
+    <Content Include="Images\buttons\mail.png" />
+    <Content Include="Images\buttons\nav_ico_help.png" />
+    <Content Include="Images\buttons\nav_ico_new.png" />
+    <Content Include="Images\buttons\nav_ico_reports.png" />
+    <Content Include="Images\buttons\nav_ico_settings.png" />
+    <Content Include="Images\buttons\nav_ico_star.png" />
+    <Content Include="Images\buttons\nav_ico_tools.png" />
+    <Content Include="Images\buttons\next.png" />
+    <Content Include="Images\buttons\open.gif" />
+    <Content Include="Images\buttons\Page.png" />
+    <Content Include="Images\buttons\Page_export.png" />
+    <Content Include="Images\buttons\Page_import.png" />
+    <Content Include="Images\buttons\Page_view.png" />
+    <Content Include="Images\buttons\pdf.gif" />
+    <Content Include="Images\buttons\Pencil.png" />
+    <Content Include="Images\buttons\percentage.png" />
+    <Content Include="Images\buttons\Person_add.png" />
+    <Content Include="Images\buttons\Person_view.png" />
+    <Content Include="Images\buttons\printer.gif" />
+    <Content Include="Images\buttons\refresh.png" />
+    <Content Include="Images\buttons\Right.png" />
+    <Content Include="Images\buttons\Right_last.png" />
+    <Content Include="Images\buttons\sad.png" />
+    <Content Include="Images\buttons\save.png" />
+    <Content Include="Images\buttons\Search.png" />
+    <Content Include="Images\buttons\Settings.png" />
+    <Content Include="Images\buttons\square.png" />
+    <Content Include="Images\buttons\start.png" />
+    <Content Include="Images\buttons\starth.png" />
+    <Content Include="Images\buttons\success.png" />
+    <Content Include="Images\buttons\systray_ico_sleek_bill.png" />
+    <Content Include="Images\buttons\viewer_ico_checkl.png" />
+    <Content Include="Images\buttons\viewer_ico_email.png" />
+    <Content Include="Images\buttons\viewer_ico_exit.png" />
+    <Content Include="Images\buttons\viewer_ico_invoice.png" />
+    <Content Include="Images\buttons\viewer_ico_pdf.png" />
+    <Content Include="Images\buttons\viewer_ico_prevl.png" />
+    <Content Include="Images\buttons\viewer_ico_print.png" />
+    <Content Include="Images\buttons\viewer_ico_tools.png" />
+    <Content Include="Images\buttons\x-hover.png" />
+    <Content Include="Images\buttons\x.png" />
+    <Content Include="Images\buttons\ZoomIn.png" />
+    <Content Include="Images\buttons\ZoomOut.png" />
+    <Content Include="Images\dialogs\errorDialog_check.jpg" />
+    <Content Include="Images\dialogs\exclamare_64.png" />
+    <Content Include="Images\dialogs\icon_exclamare.png" />
+    <Content Include="Images\dialogs\icon_info.png" />
+    <Content Include="Images\dialogs\icon_question.png" />
+    <Content Include="Images\dialogs\icon_results.png" />
+    <Content Include="Images\dialogs\icon_tick.png" />
+    <Content Include="Images\dialogs\icon_x.png" />
+    <Content Include="Images\dialogs\ico_selected_small.png" />
+    <Content Include="Images\dialogs\img_firma_no_logo.png" />
+    <Content Include="Images\dialogs\info.png" />
+    <Content Include="Images\dialogs\info_64.png" />
+    <Content Include="Images\dialogs\lock.png" />
+    <Content Include="Images\dialogs\systray_info_ico.png" />
+    <Content Include="Images\dialogs\tips-green.png" />
+    <Content Include="Images\downloaded\BG1.png" />
+    <Content Include="Images\downloaded\BG2.png" />
+    <Content Include="Images\downloaded\BG3.png" />
+    <Content Include="Images\icons\000000-1.png" />
+    <Content Include="Images\icons\000000-2.png" />
+    <Content Include="Images\icons\000000-3.png" />
+    <Content Include="Images\icons\000000-4.png" />
+    <Content Include="Images\icons\000000-5.png" />
+    <Content Include="Images\icons\000000-6.png" />
+    <Content Include="Images\icons\0091E5-1.png" />
+    <Content Include="Images\icons\0091E5-2.png" />
+    <Content Include="Images\icons\0091E5-3.png" />
+    <Content Include="Images\icons\0091E5-4.png" />
+    <Content Include="Images\icons\0091E5-5.png" />
+    <Content Include="Images\icons\0091E5-6.png" />
+    <Content Include="Images\icons\2CA70F-1.png" />
+    <Content Include="Images\icons\2CA70F-2.png" />
+    <Content Include="Images\icons\2CA70F-3.png" />
+    <Content Include="Images\icons\2CA70F-4.png" />
+    <Content Include="Images\icons\2CA70F-5.png" />
+    <Content Include="Images\icons\2CA70F-6.png" />
+    <Content Include="Images\icons\3D6B86-1.png" />
+    <Content Include="Images\icons\3D6B86-2.png" />
+    <Content Include="Images\icons\3D6B86-3.png" />
+    <Content Include="Images\icons\3D6B86-4.png" />
+    <Content Include="Images\icons\3D6B86-5.png" />
+    <Content Include="Images\icons\3D6B86-6.png" />
+    <Content Include="Images\icons\4B8B4A-1.png" />
+    <Content Include="Images\icons\4B8B4A-2.png" />
+    <Content Include="Images\icons\4B8B4A-3.png" />
+    <Content Include="Images\icons\4B8B4A-4.png" />
+    <Content Include="Images\icons\4B8B4A-5.png" />
+    <Content Include="Images\icons\4B8B4A-6.png" />
+    <Content Include="Images\icons\A3A3A3-1.png" />
+    <Content Include="Images\icons\A3A3A3-2.png" />
+    <Content Include="Images\icons\A3A3A3-3.png" />
+    <Content Include="Images\icons\A3A3A3-4.png" />
+    <Content Include="Images\icons\A3A3A3-5.png" />
+    <Content Include="Images\icons\A3A3A3-6.png" />
+    <Content Include="Images\icons\A7127B-1.png" />
+    <Content Include="Images\icons\A7127B-2.png" />
+    <Content Include="Images\icons\A7127B-3.png" />
+    <Content Include="Images\icons\A7127B-4.png" />
+    <Content Include="Images\icons\A7127B-5.png" />
+    <Content Include="Images\icons\A7127B-6.png" />
+    <Content Include="Images\icons\arrowd.png" />
+    <Content Include="Images\icons\arrowdlight.png" />
+    <Content Include="Images\icons\B82D2D-1.png" />
+    <Content Include="Images\icons\B82D2D-2.png" />
+    <Content Include="Images\icons\B82D2D-3.png" />
+    <Content Include="Images\icons\B82D2D-4.png" />
+    <Content Include="Images\icons\B82D2D-5.png" />
+    <Content Include="Images\icons\B82D2D-6.png" />
+    <Content Include="Images\icons\busy.gif" />
+    <Content Include="Images\icons\busy2.gif" />
+    <Content Include="Images\icons\casuta_noastra.png" />
+    <Content Include="Images\icons\cross-small-bw.png" />
+    <Content Include="Images\icons\cross-small-r.png" />
+    <Content Include="Images\icons\dashboard_ico_reports.png" />
+    <Content Include="Images\icons\dashboard_ico_settings.png" />
+    <Content Include="Images\icons\dashboard_ico_tools.png" />
+    <Content Include="Images\icons\dashboard_new_estimate.png" />
+    <Content Include="Images\icons\dashboard_new_estimate_hover.png" />
+    <Content Include="Images\icons\dashboard_new_invoice.png" />
+    <Content Include="Images\icons\dashboard_new_invoice_hover.png" />
+    <Content Include="Images\icons\dashboard_new_quotation.png" />
+    <Content Include="Images\icons\dashboard_new_quotation_hover.png" />
+    <Content Include="Images\icons\E58B00-1.png" />
+    <Content Include="Images\icons\E58B00-2.png" />
+    <Content Include="Images\icons\E58B00-3.png" />
+    <Content Include="Images\icons\E58B00-4.png" />
+    <Content Include="Images\icons\E58B00-5.png" />
+    <Content Include="Images\icons\E58B00-6.png" />
+    <Content Include="Images\icons\icon.png" />
+    <Content Include="Images\icons\icon_mic.gif" />
+    <Content Include="Images\icons\icon_question_mark.jpg" />
+    <Content Include="Images\icons\icon_tick.png" />
+    <Content Include="Images\icons\ico_intrebare.png" />
+    <Content Include="Images\icons\ico_problema.png" />
+    <Content Include="Images\icons\ico_site_sleekbill.png" />
+    <Content Include="Images\icons\ico_sugestie.png" />
+    <Content Include="Images\icons\information.png" />
+    <Content Include="Images\icons\initializare_ico_restore.png" />
+    <Content Include="Images\icons\initializare_ico_test.png" />
+    <Content Include="Images\icons\initializare_ico_use.png" />
+    <Content Include="Images\icons\logo.jpg" />
+    <Content Include="Images\icons\logo.png" />
+    <Content Include="Images\icons\Ok_32.png" />
+    <Content Include="Images\icons\poll_face.png" />
+    <Content Include="Images\icons\roti.png" />
+    <Content Include="Images\icons\salvare+simpla2_03.png" />
+    <Content Include="Images\icons\sleekbill-icon-update.png" />
+    <Content Include="Images\icons\sugestii_img_mail.png" />
+    <Content Include="Images\icons\sugestii_smile_happy.png" />
+    <Content Include="Images\icons\sugestii_smile_sad.png" />
+    <Content Include="Images\icons\systray_img_config.png" />
+    <Content Include="Images\icons\systray_img_lock.png" />
+    <Content Include="Images\icons\tick.png" />
+    <Content Include="Images\icons\warning.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\notifiers\1.19-27-trial.jpg" />
+    <Content Include="Images\notifiers\2.23-trial.jpg" />
+    <Content Include="Images\notifiers\3.30-trial.jpg" />
+    <Content Include="Images\notifiers\free-1.jpg" />
+    <Content Include="Images\notifiers\free-2b.jpg" />
+    <Content Include="Images\notifiers\Trial2-no-company.jpg" />
+    <Content Include="Images\notifiers\Trial3-no-invoice.jpg" />
+    <Content Include="Images\splash\splash-screen-india.jpg" />
+    <Content Include="Images\splash\splash-screen.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

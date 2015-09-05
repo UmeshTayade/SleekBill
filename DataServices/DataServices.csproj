@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="ClientService.cs" />
     <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\IMaster.cs" />
+    <Compile Include="MasterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

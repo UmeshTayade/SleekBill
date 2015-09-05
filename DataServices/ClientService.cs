@@ -30,5 +30,10 @@ namespace DataServices
         {
             this.clientDBObj.UpdateClient(client);
         }
+
+        public void DeactivateClient(int clientId)
+        {
+            this.clientDBObj.DeactivateClient(clientId);
+        }
     }
 }

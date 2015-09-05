@@ -47,10 +47,12 @@
     <Compile Include="ADO.Net\ADONETDaoFactory.cs" />
     <Compile Include="ADO.Net\Constants.cs" />
     <Compile Include="ADO.Net\ClientDBHelper.cs" />
+    <Compile Include="ADO.Net\MasterDBHelper.cs" />
     <Compile Include="DataFactories.cs" />
     <Compile Include="DataFactory.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Interfaces\IClientDB.cs" />
+    <Compile Include="Interfaces\IMasterDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

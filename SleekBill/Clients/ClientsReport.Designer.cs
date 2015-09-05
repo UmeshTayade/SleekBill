@@ -38,17 +38,29 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.pnlClientReport = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblResults = new System.Windows.Forms.Label();
             this.btnNewClient = new System.Windows.Forms.Button();
             this.dgvClientResult = new System.Windows.Forms.DataGridView();
-            this.pnlClientReport = new System.Windows.Forms.Panel();
+            this.ClientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BillingAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrivateClientDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.tlpSearchcCient.SuspendLayout();
+            this.pnlClientReport.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).BeginInit();
-            this.pnlClientReport.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpSearchcCient
@@ -171,15 +183,15 @@
             this.lblPhone.TabIndex = 4;
             this.lblPhone.Text = "Phone";
             // 
-            // btnReset
+            // pnlClientReport
             // 
-            this.btnReset.Location = new System.Drawing.Point(246, 8);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(5);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 10;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.tlpSearchcCient.SetColumnSpan(this.pnlClientReport, 2);
+            this.pnlClientReport.Controls.Add(this.btnSearch);
+            this.pnlClientReport.Controls.Add(this.btnReset);
+            this.pnlClientReport.Location = new System.Drawing.Point(273, 111);
+            this.pnlClientReport.Name = "pnlClientReport";
+            this.pnlClientReport.Size = new System.Drawing.Size(399, 31);
+            this.pnlClientReport.TabIndex = 11;
             // 
             // btnSearch
             // 
@@ -191,6 +203,16 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(246, 8);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(5);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 10;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -199,6 +221,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblResults, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNewClient, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dgvClientResult, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 176);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -234,23 +257,139 @@
             // 
             this.dgvClientResult.AllowUserToAddRows = false;
             this.dgvClientResult.AllowUserToDeleteRows = false;
-            this.dgvClientResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientResult.AllowUserToResizeColumns = false;
+            this.dgvClientResult.AllowUserToResizeRows = false;
+            this.dgvClientResult.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClientResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvClientResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientId,
+            this.ClientName,
+            this.ContactName,
+            this.BillingAddress,
+            this.Email,
+            this.Phone,
+            this.PrivateClientDetails});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvClientResult, 2);
             this.dgvClientResult.Location = new System.Drawing.Point(3, 81);
             this.dgvClientResult.Name = "dgvClientResult";
             this.dgvClientResult.ReadOnly = true;
+            this.dgvClientResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvClientResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientResult.Size = new System.Drawing.Size(941, 234);
             this.dgvClientResult.TabIndex = 27;
+            this.dgvClientResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientResult_CellClick);
             // 
-            // pnlClientReport
+            // ClientId
             // 
-            this.tlpSearchcCient.SetColumnSpan(this.pnlClientReport, 2);
-            this.pnlClientReport.Controls.Add(this.btnSearch);
-            this.pnlClientReport.Controls.Add(this.btnReset);
-            this.pnlClientReport.Location = new System.Drawing.Point(273, 111);
-            this.pnlClientReport.Name = "pnlClientReport";
-            this.pnlClientReport.Size = new System.Drawing.Size(399, 31);
-            this.pnlClientReport.TabIndex = 11;
+            this.ClientId.DataPropertyName = "ClientId";
+            this.ClientId.Frozen = true;
+            this.ClientId.HeaderText = "ID#";
+            this.ClientId.Name = "ClientId";
+            this.ClientId.ReadOnly = true;
+            this.ClientId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClientId.Width = 50;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.Frozen = true;
+            this.ClientName.HeaderText = "Client Name";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            this.ClientName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClientName.Width = 150;
+            // 
+            // ContactName
+            // 
+            this.ContactName.DataPropertyName = "ContactName";
+            this.ContactName.Frozen = true;
+            this.ContactName.HeaderText = "Contact Name";
+            this.ContactName.Name = "ContactName";
+            this.ContactName.ReadOnly = true;
+            this.ContactName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ContactName.Width = 150;
+            // 
+            // BillingAddress
+            // 
+            this.BillingAddress.DataPropertyName = "BillingAddress";
+            this.BillingAddress.Frozen = true;
+            this.BillingAddress.HeaderText = "Billing Address";
+            this.BillingAddress.Name = "BillingAddress";
+            this.BillingAddress.ReadOnly = true;
+            this.BillingAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BillingAddress.Width = 150;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.Frozen = true;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Email.Width = 150;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.Frozen = true;
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            this.Phone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Phone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PrivateClientDetails
+            // 
+            this.PrivateClientDetails.DataPropertyName = "PrivateClientDetails";
+            this.PrivateClientDetails.Frozen = true;
+            this.PrivateClientDetails.HeaderText = "Private Details";
+            this.PrivateClientDetails.Name = "PrivateClientDetails";
+            this.PrivateClientDetails.ReadOnly = true;
+            this.PrivateClientDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PrivateClientDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PrivateClientDetails.Width = 150;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnView);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Location = new System.Drawing.Point(3, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(778, 33);
+            this.panel1.TabIndex = 28;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(170, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(88, 7);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 1;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(6, 7);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // ClientsReport
             // 
@@ -269,10 +408,11 @@
             this.Load += new System.EventHandler(this.ClientsReport_Load);
             this.tlpSearchcCient.ResumeLayout(false);
             this.tlpSearchcCient.PerformLayout();
+            this.pnlClientReport.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).EndInit();
-            this.pnlClientReport.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +436,16 @@
         private System.Windows.Forms.Button btnNewClient;
         private System.Windows.Forms.DataGridView dgvClientResult;
         private System.Windows.Forms.Panel pnlClientReport;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillingAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrivateClientDetails;
     }
 }

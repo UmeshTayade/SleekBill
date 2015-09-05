@@ -9,5 +9,6 @@ namespace DataObjects
         }
 
         public abstract IClientDB clientDB { get; }
+        public abstract IMasterDB masterDB { get; }
     }
 }

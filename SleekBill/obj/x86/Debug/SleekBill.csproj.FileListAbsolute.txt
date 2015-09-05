@@ -47,3 +47,13 @@ G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Properties.Resources.re
 G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.SleekBillParentContainer.resources
 G:\Projects\SleekBill\SleekBill\obj\x86\Debug\SleekBill.csproj.GenerateResource.Cache
 G:\Projects\SleekBill\SleekBill\obj\x86\Debug\SleekBill.csprojResolveAssemblyReference.cache
+G:\Projects\SleekBill\SleekBill\bin\Debug\Sleek Bill.exe.config
+G:\Projects\SleekBill\SleekBill\bin\Debug\BusinessObjects.dll
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataServices.dll
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjects.dll
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjectHelpers.dll
+G:\Projects\SleekBill\SleekBill\bin\Debug\BusinessObjects.pdb
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataServices.pdb
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjects.pdb
+G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjectHelpers.pdb
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Controls.MessageForm.resources

@@ -11,8 +11,10 @@ namespace DataServices.Interfaces
         int AddClient(Client client);
         List<Client> GetAllClients();
         [DataObjectMethod(DataObjectMethodType.Select)]
-        Client GetClient(int ClientId);
+        Client GetClient(int clientId);
         [DataObjectMethod(DataObjectMethodType.Update)]
         void UpdateClient(Client client);
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        void DeactivateClient(int clientId);
     }
 }

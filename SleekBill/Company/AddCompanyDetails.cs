@@ -57,7 +57,7 @@ namespace Sleek_Bill_Company
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtCompanyName.Text))
-                MessageBox.Show(string.Format(Constants.SUCCESSFULL_MESSAGE, txtCompanyName.Text));
+                MessageBox.Show(string.Format(Constants.SUCCESSFULL_MESSAGE,Constants.CONSTANT_COMPANY, txtCompanyName.Text));
         }
 
         private void AddCompanyDetails_Load(object sender, EventArgs e)

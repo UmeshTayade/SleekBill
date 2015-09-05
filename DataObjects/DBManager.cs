@@ -13,5 +13,13 @@ namespace DataObjects
         {
             get { return factory.clientDB; }
         }
+
+        public static IMasterDB MasterDB
+        {
+            get
+            {
+                return factory.masterDB;
+            }
+        }
     }
 }

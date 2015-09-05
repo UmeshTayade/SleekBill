@@ -2,3 +2,4 @@ G:\Projects\SleekBill\DataObjectHelpers\bin\Debug\DataObjectHelpers.dll
 G:\Projects\SleekBill\DataObjectHelpers\bin\Debug\DataObjectHelpers.pdb
 G:\Projects\SleekBill\DataObjectHelpers\obj\Debug\DataObjectHelpers.dll
 G:\Projects\SleekBill\DataObjectHelpers\obj\Debug\DataObjectHelpers.pdb
+G:\Projects\SleekBill\DataObjectHelpers\obj\Debug\DataObjectHelpers.csprojResolveAssemblyReference.cache
