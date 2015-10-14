@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace BusinessObjects
 {
     public class Company
@@ -19,5 +20,8 @@ namespace BusinessObjects
         public string Logo { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
+        public bool Status { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }

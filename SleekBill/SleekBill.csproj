@@ -34,7 +34,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\FormState.cs" />
+    <Compile Include="Common\PaymentTerms.cs" />
+    <Compile Include="Company\EditCompanyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\EditCompanyDetails.Designer.cs">
+      <DependentUpon>EditCompanyDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomImages.cs" />
     <Compile Include="Controls\CustomMessageBox.cs" />
     <Compile Include="Controls\MessageForm.cs">
@@ -90,17 +110,35 @@
       <DependentUpon>AddCompanyDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Invoices\EditInvoiceProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\EditInvoiceProduct.Designer.cs">
+      <DependentUpon>EditInvoiceProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoices\EditTax.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Invoices\EditTax.Designer.cs">
       <DependentUpon>EditTax.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoices\InvoicesReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Invoices\InvoicesReport.Designer.cs">
       <DependentUpon>InvoicesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\PreviewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\PreviewInvoice.Designer.cs">
+      <DependentUpon>PreviewInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Products\AddEditProduct.cs">
       <SubType>Form</SubType>
@@ -122,6 +160,9 @@
     <Compile Include="SleekBillParentContainer.Designer.cs">
       <DependentUpon>SleekBillParentContainer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Company\EditCompanyDetails.resx">
+      <DependentUpon>EditCompanyDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,11 +181,20 @@
     <EmbeddedResource Include="Company\AddCompanyDetails.resx">
       <DependentUpon>AddCompanyDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\EditInvoiceProduct.resx">
+      <DependentUpon>EditInvoiceProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoices\EditTax.resx">
       <DependentUpon>EditTax.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoices\InvoicesReport.resx">
       <DependentUpon>InvoicesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\PreviewInvoice.resx">
+      <DependentUpon>PreviewInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products\AddEditProduct.resx">
       <DependentUpon>AddEditProduct.cs</DependentUpon>
@@ -165,7 +215,9 @@
     <EmbeddedResource Include="SleekBillParentContainer.resx">
       <DependentUpon>SleekBillParentContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,9 +227,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Android-Lollipop-wallpapers-g.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj">
@@ -391,6 +440,28 @@
     <Content Include="Images\notifiers\Trial3-no-invoice.jpg" />
     <Content Include="Images\splash\splash-screen-india.jpg" />
     <Content Include="Images\splash\splash-screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\CompanyLogo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

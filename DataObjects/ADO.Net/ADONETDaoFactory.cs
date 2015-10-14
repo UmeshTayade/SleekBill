@@ -13,5 +13,20 @@ namespace DataObjects.ADO.Net
         {
             get { return new MasterDBHelper(); }
         }
+
+        public override ICompanyDB companyDB
+        {
+            get { return new CompanyDBHelper(); }
+        }
+
+        public override IProductDB productDB
+        {
+            get { return new ProductDBHelper(); }
+        }
+
+        public override IInvoiceDB invoiceDB
+        {
+            get { return new InvoiceDBHelper(); }
+        }
     }
 }

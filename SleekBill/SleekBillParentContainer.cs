@@ -10,6 +10,7 @@ using Sleek_Bill_Company;
 using Sleek_Bill.Clients;
 using Sleek_Bill.Products;
 using Sleek_Bill.Invoices;
+using Sleek_Bill.Company;
 
 namespace Sleek_Bill
 {
@@ -25,10 +26,11 @@ namespace Sleek_Bill
             Form[] childForms = this.MdiChildren;
             foreach (Form childForm in childForms)
                 childForm.Close();
-            AddCompanyDetails addCompanyDetails = new AddCompanyDetails();
-            addCompanyDetails.StartPosition = FormStartPosition.CenterParent;
-            addCompanyDetails.MdiParent = this;
-            addCompanyDetails.Show();
+
+            EditCompanyDetails editCompanyDetails = new EditCompanyDetails();
+            editCompanyDetails.StartPosition = FormStartPosition.CenterParent;
+            editCompanyDetails.MdiParent = this;
+            editCompanyDetails.Show();
         }
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +94,17 @@ namespace Sleek_Bill
             addTaxes.StartPosition = FormStartPosition.CenterParent;
             addTaxes.MdiParent = this;
             addTaxes.Show();
+        }
+
+        private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form[] childForms = this.MdiChildren;
+            foreach (Form childForm in childForms)
+                childForm.Close();
+            AddCompanyDetails addCompanyDetails = new AddCompanyDetails();
+            addCompanyDetails.StartPosition = FormStartPosition.CenterParent;
+            addCompanyDetails.MdiParent = this;
+            addCompanyDetails.Show();
         }
     }
 }

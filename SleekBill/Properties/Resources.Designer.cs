@@ -63,9 +63,19 @@ namespace Sleek_Bill.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Android_Lollipop_wallpapers_g {
+        internal static System.Drawing.Bitmap ico_right {
             get {
-                object obj = ResourceManager.GetObject("Android-Lollipop-wallpapers-g", resourceCulture);
+                object obj = ResourceManager.GetObject("ico_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Left {
+            get {
+                object obj = ResourceManager.GetObject("Left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

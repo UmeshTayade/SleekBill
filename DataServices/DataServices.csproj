@@ -44,9 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientService.cs" />
+    <Compile Include="CompanyService.cs" />
     <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\ICompany.cs" />
+    <Compile Include="Interfaces\IInvoice.cs" />
     <Compile Include="Interfaces\IMaster.cs" />
+    <Compile Include="Interfaces\IProduct.cs" />
+    <Compile Include="InvoiceService.cs" />
     <Compile Include="MasterService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

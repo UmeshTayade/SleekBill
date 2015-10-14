@@ -30,37 +30,47 @@
         {
             this.tlpSearchcCient = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblSearchClient = new System.Windows.Forms.Label();
             this.lblClientName = new System.Windows.Forms.Label();
             this.lblContactName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.pnlClientReport = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.cmbClientName = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblResults = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnNewClient = new System.Windows.Forms.Button();
             this.dgvClientResult = new System.Windows.Forms.DataGridView();
-            this.ClientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlPager = new System.Windows.Forms.Panel();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.lblSeperator = new System.Windows.Forms.Label();
+            this.txtPageEnd = new System.Windows.Forms.TextBox();
+            this.txtPageStart = new System.Windows.Forms.TextBox();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.txtResultsPerPage = new System.Windows.Forms.TextBox();
+            this.lblPaging = new System.Windows.Forms.Label();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillingAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrivateClientDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.tlpSearchcCient.SuspendLayout();
             this.pnlClientReport.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).BeginInit();
+            this.pnlPager.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpSearchcCient
@@ -72,15 +82,15 @@
             this.tlpSearchcCient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tlpSearchcCient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tlpSearchcCient.Controls.Add(this.lblEmail, 3, 1);
-            this.tlpSearchcCient.Controls.Add(this.txtCompanyName, 2, 1);
-            this.tlpSearchcCient.Controls.Add(this.textBox1, 4, 1);
+            this.tlpSearchcCient.Controls.Add(this.txtEmail, 4, 1);
             this.tlpSearchcCient.Controls.Add(this.lblSearchClient, 0, 0);
             this.tlpSearchcCient.Controls.Add(this.lblClientName, 1, 1);
             this.tlpSearchcCient.Controls.Add(this.lblContactName, 1, 2);
-            this.tlpSearchcCient.Controls.Add(this.textBox2, 2, 2);
-            this.tlpSearchcCient.Controls.Add(this.textBox3, 4, 2);
+            this.tlpSearchcCient.Controls.Add(this.txtContactName, 2, 2);
+            this.tlpSearchcCient.Controls.Add(this.txtPhone, 4, 2);
             this.tlpSearchcCient.Controls.Add(this.lblPhone, 3, 2);
             this.tlpSearchcCient.Controls.Add(this.pnlClientReport, 2, 3);
+            this.tlpSearchcCient.Controls.Add(this.cmbClientName, 2, 1);
             this.tlpSearchcCient.Location = new System.Drawing.Point(12, 12);
             this.tlpSearchcCient.Name = "tlpSearchcCient";
             this.tlpSearchcCient.RowCount = 4;
@@ -103,23 +113,14 @@
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email";
             // 
-            // txtCompanyName
+            // txtEmail
             // 
-            this.txtCompanyName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCompanyName.Location = new System.Drawing.Point(275, 41);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(214, 23);
-            this.txtCompanyName.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(680, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 23);
-            this.textBox1.TabIndex = 7;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtEmail.Location = new System.Drawing.Point(680, 41);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(251, 23);
+            this.txtEmail.TabIndex = 7;
             // 
             // lblSearchClient
             // 
@@ -154,23 +155,23 @@
             this.lblContactName.TabIndex = 2;
             this.lblContactName.Text = "Contact Name";
             // 
-            // textBox2
+            // txtContactName
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(275, 77);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 23);
-            this.textBox2.TabIndex = 6;
+            this.txtContactName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtContactName.Location = new System.Drawing.Point(275, 77);
+            this.txtContactName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(250, 23);
+            this.txtContactName.TabIndex = 6;
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(680, 77);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(214, 23);
-            this.textBox3.TabIndex = 8;
+            this.txtPhone.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPhone.Location = new System.Drawing.Point(680, 77);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(251, 23);
+            this.txtPhone.TabIndex = 8;
             // 
             // lblPhone
             // 
@@ -202,6 +203,7 @@
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnReset
             // 
@@ -212,6 +214,20 @@
             this.btnReset.TabIndex = 10;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // cmbClientName
+            // 
+            this.cmbClientName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbClientName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbClientName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbClientName.FormattingEnabled = true;
+            this.cmbClientName.IntegralHeight = false;
+            this.cmbClientName.Location = new System.Drawing.Point(276, 41);
+            this.cmbClientName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.cmbClientName.Name = "cmbClientName";
+            this.cmbClientName.Size = new System.Drawing.Size(249, 23);
+            this.cmbClientName.TabIndex = 28;
             // 
             // tableLayoutPanel1
             // 
@@ -219,16 +235,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.86413F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.13587F));
             this.tableLayoutPanel1.Controls.Add(this.lblResults, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnNewClient, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dgvClientResult, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnlPager, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 176);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.47155F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.47155F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.0569F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(947, 318);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.15484F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.4175F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.71337F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.71429F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(947, 332);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblResults
@@ -238,14 +256,54 @@
             this.lblResults.Location = new System.Drawing.Point(5, 10);
             this.lblResults.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(57, 19);
+            this.lblResults.Size = new System.Drawing.Size(57, 15);
             this.lblResults.TabIndex = 1;
             this.lblResults.Text = "Results";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnView);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Location = new System.Drawing.Point(3, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(778, 31);
+            this.panel1.TabIndex = 28;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(170, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(88, 7);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 1;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(6, 7);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnNewClient
             // 
-            this.btnNewClient.Location = new System.Drawing.Point(866, 44);
-            this.btnNewClient.Margin = new System.Windows.Forms.Padding(82, 5, 5, 5);
+            this.btnNewClient.Location = new System.Drawing.Point(866, 40);
+            this.btnNewClient.Margin = new System.Windows.Forms.Padding(82, 10, 5, 0);
             this.btnNewClient.Name = "btnNewClient";
             this.btnNewClient.Size = new System.Drawing.Size(75, 23);
             this.btnNewClient.TabIndex = 11;
@@ -262,7 +320,7 @@
             this.dgvClientResult.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvClientResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClientId,
+            this.No,
             this.ClientName,
             this.ContactName,
             this.BillingAddress,
@@ -270,24 +328,109 @@
             this.Phone,
             this.PrivateClientDetails});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvClientResult, 2);
-            this.dgvClientResult.Location = new System.Drawing.Point(3, 81);
+            this.dgvClientResult.Location = new System.Drawing.Point(3, 70);
             this.dgvClientResult.Name = "dgvClientResult";
             this.dgvClientResult.ReadOnly = true;
             this.dgvClientResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvClientResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientResult.Size = new System.Drawing.Size(941, 234);
+            this.dgvClientResult.Size = new System.Drawing.Size(941, 222);
             this.dgvClientResult.TabIndex = 27;
             this.dgvClientResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientResult_CellClick);
             // 
-            // ClientId
+            // pnlPager
             // 
-            this.ClientId.DataPropertyName = "ClientId";
-            this.ClientId.Frozen = true;
-            this.ClientId.HeaderText = "ID#";
-            this.ClientId.Name = "ClientId";
-            this.ClientId.ReadOnly = true;
-            this.ClientId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClientId.Width = 50;
+            this.pnlPager.Controls.Add(this.btnRight);
+            this.pnlPager.Controls.Add(this.btnLeft);
+            this.pnlPager.Controls.Add(this.lblSeperator);
+            this.pnlPager.Controls.Add(this.txtPageEnd);
+            this.pnlPager.Controls.Add(this.txtPageStart);
+            this.pnlPager.Controls.Add(this.btnApply);
+            this.pnlPager.Controls.Add(this.txtResultsPerPage);
+            this.pnlPager.Controls.Add(this.lblPaging);
+            this.pnlPager.Location = new System.Drawing.Point(3, 298);
+            this.pnlPager.Name = "pnlPager";
+            this.pnlPager.Size = new System.Drawing.Size(778, 31);
+            this.pnlPager.TabIndex = 29;
+            // 
+            // btnRight
+            // 
+            this.btnRight.Image = global::Sleek_Bill.Properties.Resources.ico_right;
+            this.btnRight.Location = new System.Drawing.Point(431, 6);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(32, 23);
+            this.btnRight.TabIndex = 8;
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Image = global::Sleek_Bill.Properties.Resources.Left;
+            this.btnLeft.Location = new System.Drawing.Point(289, 6);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(32, 23);
+            this.btnLeft.TabIndex = 7;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            // 
+            // lblSeperator
+            // 
+            this.lblSeperator.AutoSize = true;
+            this.lblSeperator.Location = new System.Drawing.Point(368, 10);
+            this.lblSeperator.Name = "lblSeperator";
+            this.lblSeperator.Size = new System.Drawing.Size(12, 15);
+            this.lblSeperator.TabIndex = 6;
+            this.lblSeperator.Text = "/";
+            // 
+            // txtPageEnd
+            // 
+            this.txtPageEnd.Location = new System.Drawing.Point(385, 6);
+            this.txtPageEnd.Name = "txtPageEnd";
+            this.txtPageEnd.Size = new System.Drawing.Size(37, 23);
+            this.txtPageEnd.TabIndex = 5;
+            // 
+            // txtPageStart
+            // 
+            this.txtPageStart.Location = new System.Drawing.Point(327, 6);
+            this.txtPageStart.Name = "txtPageStart";
+            this.txtPageStart.Size = new System.Drawing.Size(37, 23);
+            this.txtPageStart.TabIndex = 4;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(170, 6);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // txtResultsPerPage
+            // 
+            this.txtResultsPerPage.Location = new System.Drawing.Point(112, 6);
+            this.txtResultsPerPage.Name = "txtResultsPerPage";
+            this.txtResultsPerPage.Size = new System.Drawing.Size(37, 23);
+            this.txtResultsPerPage.TabIndex = 1;
+            this.txtResultsPerPage.Text = "5";
+            // 
+            // lblPaging
+            // 
+            this.lblPaging.AutoSize = true;
+            this.lblPaging.Location = new System.Drawing.Point(3, 9);
+            this.lblPaging.Name = "lblPaging";
+            this.lblPaging.Size = new System.Drawing.Size(103, 15);
+            this.lblPaging.TabIndex = 0;
+            this.lblPaging.Text = "Results Per Page :";
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "No";
+            this.No.Frozen = true;
+            this.No.HeaderText = "No.";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.No.Width = 50;
             // 
             // ClientName
             // 
@@ -351,46 +494,6 @@
             this.PrivateClientDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.PrivateClientDetails.Width = 150;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnView);
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Location = new System.Drawing.Point(3, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 33);
-            this.panel1.TabIndex = 28;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(170, 7);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(88, 7);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(75, 23);
-            this.btnView.TabIndex = 1;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(6, 7);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // ClientsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -411,8 +514,10 @@
             this.pnlClientReport.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientResult)).EndInit();
+            this.pnlPager.ResumeLayout(false);
+            this.pnlPager.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,13 +526,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpSearchcCient;
         private System.Windows.Forms.Label lblSearchClient;
-        private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblContactName;
         private System.Windows.Forms.Label lblClientName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSearch;
@@ -440,7 +544,17 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientId;
+        private System.Windows.Forms.ComboBox cmbClientName;
+        private System.Windows.Forms.Panel pnlPager;
+        private System.Windows.Forms.Label lblPaging;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.TextBox txtResultsPerPage;
+        private System.Windows.Forms.TextBox txtPageStart;
+        private System.Windows.Forms.TextBox txtPageEnd;
+        private System.Windows.Forms.Label lblSeperator;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactName;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillingAddress;

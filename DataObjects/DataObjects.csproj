@@ -45,14 +45,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO.Net\ADONETDaoFactory.cs" />
+    <Compile Include="ADO.Net\CompanyDBHelper.cs" />
     <Compile Include="ADO.Net\Constants.cs" />
     <Compile Include="ADO.Net\ClientDBHelper.cs" />
+    <Compile Include="ADO.Net\InvoiceDBHelper.cs" />
     <Compile Include="ADO.Net\MasterDBHelper.cs" />
+    <Compile Include="ADO.Net\ProductDBHelper.cs" />
     <Compile Include="DataFactories.cs" />
     <Compile Include="DataFactory.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Interfaces\IClientDB.cs" />
+    <Compile Include="Interfaces\ICompanyDB.cs" />
+    <Compile Include="Interfaces\IInvoiceDB.cs" />
     <Compile Include="Interfaces\IMasterDB.cs" />
+    <Compile Include="Interfaces\IProductDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

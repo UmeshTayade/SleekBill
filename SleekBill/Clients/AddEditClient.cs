@@ -137,7 +137,7 @@ namespace Sleek_Bill.Clients
             {
                 int clientId = clientService.AddClient(client);
                 ResetControls();
-                CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_MESSAGE, Constants.CONSTANT_CLIENT, txtClientName.Text),
+                CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_ADD_MESSAGE, Constants.CONSTANT_CLIENT, txtClientName.Text),
                                                               Constants.CONSTANT_INFORMATION,
                                                               Sleek_Bill.Controls.CustomMessageBox.eDialogButtons.OK,
                                                               CustomImages.GetDialogImage(Sleek_Bill.Controls.CustomImages.eCustomDialogImages.Success));
@@ -146,7 +146,7 @@ namespace Sleek_Bill.Clients
             {
                 client.ClientId = clientID;
                 clientService.UpdateClient(client);
-                CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_SAVE, txtClientName.Text),
+                CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_SAVE_MESSAGE, txtClientName.Text),
                                                               Constants.CONSTANT_INFORMATION,
                                                               Sleek_Bill.Controls.CustomMessageBox.eDialogButtons.OK,
                                                               CustomImages.GetDialogImage(Sleek_Bill.Controls.CustomImages.eCustomDialogImages.Success));

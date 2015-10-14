@@ -498,7 +498,7 @@
             // 
             // cmbState
             // 
-            this.cmbState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbState.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbState.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbState.FormattingEnabled = true;
@@ -523,7 +523,7 @@
             // 
             // cmbShippingState
             // 
-            this.cmbShippingState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbShippingState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbShippingState.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbShippingState.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbShippingState.FormattingEnabled = true;

@@ -32,10 +32,10 @@
             this.lblTaxInformation = new System.Windows.Forms.Label();
             this.lblTaxName = new System.Windows.Forms.Label();
             this.lblTaxPercentage = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTaxName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPercentage = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTaxPercentage = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblTaxInformation, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTaxName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTaxPercentage, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtTaxName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
@@ -99,20 +99,20 @@
             this.lblTaxPercentage.TabIndex = 11;
             this.lblTaxPercentage.Text = "Tax Percentage";
             // 
-            // textBox2
+            // txtTaxName
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox2, 2);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(157, 42);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 22);
-            this.textBox2.TabIndex = 12;
+            this.tableLayoutPanel1.SetColumnSpan(this.txtTaxName, 2);
+            this.txtTaxName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTaxName.Location = new System.Drawing.Point(157, 42);
+            this.txtTaxName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtTaxName.Name = "txtTaxName";
+            this.txtTaxName.Size = new System.Drawing.Size(274, 22);
+            this.txtTaxName.TabIndex = 12;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblPercentage);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtTaxPercentage);
             this.panel1.Location = new System.Drawing.Point(154, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(110, 32);
@@ -129,14 +129,14 @@
             this.lblPercentage.TabIndex = 11;
             this.lblPercentage.Text = "%";
             // 
-            // textBox1
+            // txtTaxPercentage
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(4, 1);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 22);
-            this.textBox1.TabIndex = 10;
+            this.txtTaxPercentage.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTaxPercentage.Location = new System.Drawing.Point(4, 1);
+            this.txtTaxPercentage.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtTaxPercentage.Name = "txtTaxPercentage";
+            this.txtTaxPercentage.Size = new System.Drawing.Size(72, 22);
+            this.txtTaxPercentage.TabIndex = 10;
             // 
             // btnSave
             // 
@@ -147,6 +147,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // EditTax
             // 
@@ -176,10 +177,10 @@
         private System.Windows.Forms.Label lblTaxInformation;
         private System.Windows.Forms.Label lblTaxName;
         private System.Windows.Forms.Label lblTaxPercentage;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTaxName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPercentage;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTaxPercentage;
         private System.Windows.Forms.Button btnSave;
     }
 }

@@ -45,7 +45,6 @@
             this.lblCurrency = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.txtCompanyPhone = new System.Windows.Forms.TextBox();
@@ -56,11 +55,12 @@
             this.txtServiceTaxNo = new System.Windows.Forms.TextBox();
             this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
             this.txtPAN = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCurrency = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.txtCountry = new System.Windows.Forms.TextBox();
             this.tblAddComapnyDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +88,6 @@
             this.tblAddComapnyDetails.Controls.Add(this.lblCurrency, 2, 5);
             this.tblAddComapnyDetails.Controls.Add(this.lblLogo, 2, 6);
             this.tblAddComapnyDetails.Controls.Add(this.txtCompanyName, 1, 1);
-            this.tblAddComapnyDetails.Controls.Add(this.cmbCountry, 1, 2);
             this.tblAddComapnyDetails.Controls.Add(this.txtAddress, 1, 3);
             this.tblAddComapnyDetails.Controls.Add(this.cmbState, 1, 5);
             this.tblAddComapnyDetails.Controls.Add(this.txtCompanyPhone, 1, 6);
@@ -99,11 +98,12 @@
             this.tblAddComapnyDetails.Controls.Add(this.txtServiceTaxNo, 3, 2);
             this.tblAddComapnyDetails.Controls.Add(this.txtAdditionalDetails, 3, 3);
             this.tblAddComapnyDetails.Controls.Add(this.txtPAN, 3, 4);
-            this.tblAddComapnyDetails.Controls.Add(this.comboBox1, 3, 5);
+            this.tblAddComapnyDetails.Controls.Add(this.cmbCurrency, 3, 5);
             this.tblAddComapnyDetails.Controls.Add(this.btnSave, 3, 9);
             this.tblAddComapnyDetails.Controls.Add(this.btnRemove, 2, 8);
             this.tblAddComapnyDetails.Controls.Add(this.btnSelect, 2, 7);
             this.tblAddComapnyDetails.Controls.Add(this.pnlLogo, 3, 6);
+            this.tblAddComapnyDetails.Controls.Add(this.txtCountry, 1, 2);
             this.tblAddComapnyDetails.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tblAddComapnyDetails.Location = new System.Drawing.Point(14, 14);
             this.tblAddComapnyDetails.Name = "tblAddComapnyDetails";
@@ -297,16 +297,6 @@
             this.txtCompanyName.Size = new System.Drawing.Size(249, 22);
             this.txtCompanyName.TabIndex = 16;
             // 
-            // cmbCountry
-            // 
-            this.cmbCountry.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(158, 89);
-            this.cmbCountry.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(249, 22);
-            this.cmbCountry.TabIndex = 17;
-            // 
             // txtAddress
             // 
             this.txtAddress.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -320,6 +310,8 @@
             // 
             // cmbState
             // 
+            this.cmbState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbState.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbState.FormattingEnabled = true;
             this.cmbState.Location = new System.Drawing.Point(158, 280);
             this.cmbState.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -393,14 +385,15 @@
             this.txtPAN.Size = new System.Drawing.Size(249, 22);
             this.txtPAN.TabIndex = 27;
             // 
-            // comboBox1
+            // cmbCurrency
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(638, 280);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 22);
-            this.comboBox1.TabIndex = 28;
+            this.cmbCurrency.Enabled = false;
+            this.cmbCurrency.FormattingEnabled = true;
+            this.cmbCurrency.Location = new System.Drawing.Point(638, 280);
+            this.cmbCurrency.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.cmbCurrency.Name = "cmbCurrency";
+            this.cmbCurrency.Size = new System.Drawing.Size(249, 22);
+            this.cmbCurrency.TabIndex = 28;
             // 
             // btnSave
             // 
@@ -451,6 +444,17 @@
             this.pnlLogo.Size = new System.Drawing.Size(252, 116);
             this.pnlLogo.TabIndex = 30;
             // 
+            // txtCountry
+            // 
+            this.txtCountry.Enabled = false;
+            this.txtCountry.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtCountry.Location = new System.Drawing.Point(158, 89);
+            this.txtCountry.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(249, 22);
+            this.txtCountry.TabIndex = 17;
+            this.txtCountry.Text = "India";
+            // 
             // AddCompanyDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -460,7 +464,7 @@
             this.Controls.Add(this.tblAddComapnyDetails);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkCyan;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "AddCompanyDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Company Details";
@@ -490,7 +494,6 @@
         private System.Windows.Forms.Label lblCurrency;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.ComboBox cmbState;
@@ -501,10 +504,11 @@
         private System.Windows.Forms.TextBox txtServiceTaxNo;
         private System.Windows.Forms.TextBox txtAdditionalDetails;
         private System.Windows.Forms.TextBox txtPAN;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCurrency;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.TextBox txtCountry;
     }
 }

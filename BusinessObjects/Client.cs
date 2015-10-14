@@ -4,6 +4,17 @@ namespace BusinessObjects
 {
     public class Client
     {
+        public Client()
+        {
+
+        }
+
+        public Client(int clientId, string clientName)
+        {
+            this.ClientId = clientId;
+            this.ClientName = clientName;
+        }
+
         public int ClientId { get; set; }
         public string ClientName { get; set; }
         public string ContactName { get; set; }

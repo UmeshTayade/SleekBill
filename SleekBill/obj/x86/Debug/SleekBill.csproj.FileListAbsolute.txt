@@ -57,3 +57,13 @@ G:\Projects\SleekBill\SleekBill\bin\Debug\DataServices.pdb
 G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjects.pdb
 G:\Projects\SleekBill\SleekBill\bin\Debug\DataObjectHelpers.pdb
 G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Controls.MessageForm.resources
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Company.EditCompanyDetails.resources
+G:\Projects\SleekBill\SleekBill\bin\Debug\itextsharp.xml
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Invoices.Form1.resources
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Invoices.EditInvoiceProduct.resources
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Sleek_Bill.Invoices.PreviewInvoice.resources
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\Interop.AcroPDFLib.dll
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+G:\Projects\SleekBill\SleekBill\obj\x86\Debug\SleekBill.csproj.ResolveComReference.cache
+G:\Projects\SleekBill\SleekBill\bin\Debug\Interop.AcroPDFLib.dll
+G:\Projects\SleekBill\SleekBill\bin\Debug\AxInterop.AcroPDFLib.dll

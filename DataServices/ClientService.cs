@@ -9,7 +9,7 @@ namespace DataServices
 {
     public class ClientService : IClient
     {
-        private readonly IClientDB clientDBObj = DBManager.clientDB;
+        private readonly IClientDB clientDBObj = DBManager.ClientDB;
 
         public int AddClient(Client client)
         {

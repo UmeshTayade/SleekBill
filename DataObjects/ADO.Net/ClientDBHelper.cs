@@ -37,7 +37,8 @@ namespace DataObjects.ADO.Net
                                Db.CreateParameter("ShippingCity", client.ShippingCity),
                                Db.CreateParameter("ShippingStateCode", client.ShippingStateCode),
                                Db.CreateParameter("ShippingZip", client.ShippingZip),
-                               Db.CreateParameter("ShippingCountry", client.ShippingCountry)                               
+                               Db.CreateParameter("ShippingCountry", client.ShippingCountry),
+                               Db.CreateParameter("Status", client.Status)
                  });
                 scope.Complete();
                 return (int)parameter.Value;
@@ -78,8 +79,7 @@ namespace DataObjects.ADO.Net
                                Db.CreateParameter("ShippingCity", client.ShippingCity),
                                Db.CreateParameter("ShippingStateCode", client.ShippingStateCode),
                                Db.CreateParameter("ShippingZip", client.ShippingZip),
-                               Db.CreateParameter("ShippingCountry", client.ShippingCountry),
-                               Db.CreateParameter("Status", client.Status),
+                               Db.CreateParameter("ShippingCountry", client.ShippingCountry)
                                
                  });
                 scope.Complete();
