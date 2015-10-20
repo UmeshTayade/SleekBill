@@ -11,6 +11,8 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Configuration;
 using System.Diagnostics;
+using System.Transactions;
+using Sleek_Bill.Controls;
 
 namespace Sleek_Bill.Invoices
 {
@@ -61,11 +63,27 @@ namespace Sleek_Bill.Invoices
                 SetDefaultData();
                 BindClientNameDropdown();
                 BindPaymentTermDropdown();
+                BindPaymentTypeDropdown();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error :" + ex.Message);
             }
+        }
+
+        private void BindPaymentTypeDropdown()
+        {
+            List<PaymentType> lstPaymentType = new List<PaymentType>();
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.Cash, "Cash"));
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.CreditCard, "Credit Card"));
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.DebitCard, "Debit Card"));
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.Check, "Check"));
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.BankTransfer, "Bank Transfer"));
+            lstPaymentType.Add(new PaymentType((int)ePaymentType.Other, "Other"));
+
+            cmbPaymentType.DataSource = lstPaymentType;
+            cmbPaymentType.DisplayMember = "PaymentTypeName";
+            cmbPaymentType.ValueMember = "PaymentTypeId";
         }
 
         private void LoadTaxDropDown()
@@ -151,6 +169,8 @@ namespace Sleek_Bill.Invoices
         {
             List<Tax> lstTax = masterService.GetAllTaxes();
             invoiceProduct = new InvoiceProduct();
+            invoiceProduct.InvoiceProductId = lstInvoiceProduct.Count;
+            invoiceProduct.InvoiceId = String.IsNullOrEmpty(txtInvoiceNumber.Text) ? 0 : Convert.ToInt32(txtInvoiceNumber.Text);
             invoiceProduct.ProductId = Convert.ToInt32(cmbProduct.SelectedValue);
             invoiceProduct.ProductName = cmbProduct.Text.Trim();
             invoiceProduct.Description = txtDescription.Text.Trim();
@@ -834,39 +854,103 @@ namespace Sleek_Bill.Invoices
 
         private void btnSaveInvoice_Click(object sender, EventArgs e)
         {
-            int invoiceId = string.IsNullOrEmpty(txtInvoiceNumber.Text) ? 0 : Convert.ToInt32(txtInvoiceNumber.Text);
-            var invoiceDetails = invoiceService.GetInvoice(invoiceId);
-            var comapnyDetails = (from company in companyService.GetAllCompany()
-                                 .Where(v => v.Status == true)
-                                  select company).SingleOrDefault();
-
-            Invoice invoice = new Invoice();
-            invoice.InvoiceId = invoiceId;
-            invoice.CompanyId = comapnyDetails.CompanyId;
-            invoice.ClientId = ClientId;
-            invoice.IssueDate = string.IsNullOrEmpty(dtpIssueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpIssueDate.Text).Date;
-            invoice.PurchaseOrderNo = string.IsNullOrEmpty(txtPONumber.Text) ? String.Empty : txtPONumber.Text;
-            invoice.PaymentTermId = Convert.ToInt32(cmbPaymentTerms.SelectedValue);
-            invoice.DueDate = string.IsNullOrEmpty(dtpDueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpDueDate.Text).Date;
-            invoice.Discount = string.IsNullOrEmpty(txtDiscount.Text) ? decimal.Zero : Convert.ToDecimal(txtDiscount.Text);
-            invoice.RoundOffTotal = chkRoundOff.Checked;
-            invoice.MarkInvoicePaid = chkMarkInvoicePaid.Checked;
-            invoice.PaymentTypeId = Convert.ToInt32(cmbPaymentType.SelectedValue);
-            invoice.AmountPaid = string.IsNullOrEmpty(txtAmountPaid.Text) ? decimal.Zero : Convert.ToDecimal(txtAmountPaid.Text);
-            invoice.Notes = string.IsNullOrEmpty(txtNotes.Text) ? String.Empty : txtNotes.Text;
-            invoice.TotalAmount = TotalValue;
-            invoice.NotesForClient = string.IsNullOrEmpty(txtNoteForClient.Text) ? String.Empty : txtNoteForClient.Text;
-            invoice.PrivateNotes = string.IsNullOrEmpty(txtprivateNotes.Text) ? String.Empty : txtprivateNotes.Text;
-
-            if (invoiceDetails == null)
+            try
             {
-                invoiceService.AddInvoice(invoice);
-            }
-            else
-            {
-                invoiceService.UpdateInvoice(invoice);
-            }
+                int invoiceId = string.IsNullOrEmpty(txtInvoiceNumber.Text) ? 0 : Convert.ToInt32(txtInvoiceNumber.Text);
+                var invoiceDetails = invoiceService.GetInvoice(invoiceId);
+                var comapnyDetails = (from company in companyService.GetAllCompany()
+                                     .Where(v => v.Status == true)
+                                      select company).SingleOrDefault();
 
+                Invoice invoice = new Invoice();
+                invoice.InvoiceId = invoiceId;
+                invoice.CompanyId = comapnyDetails.CompanyId;
+                invoice.ClientId = ClientId;
+                invoice.IssueDate = string.IsNullOrEmpty(dtpIssueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpIssueDate.Text).Date;
+                invoice.PurchaseOrderNo = string.IsNullOrEmpty(txtPONumber.Text) ? String.Empty : txtPONumber.Text;
+                invoice.PaymentTermId = Convert.ToInt32(cmbPaymentTerms.SelectedValue);
+                invoice.DueDate = string.IsNullOrEmpty(dtpDueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpDueDate.Text).Date;
+                invoice.Discount = string.IsNullOrEmpty(txtDiscount.Text) ? decimal.Zero : Convert.ToDecimal(txtDiscount.Text);
+                invoice.RoundOffTotal = chkRoundOff.Checked;
+                invoice.MarkInvoicePaid = chkMarkInvoicePaid.Checked;
+
+                if (chkMarkInvoicePaid.Checked)
+                {
+                    invoice.PaymentTypeId = Convert.ToInt32(cmbPaymentType.SelectedValue);
+                    invoice.AmountPaid = string.IsNullOrEmpty(txtAmountPaid.Text) ? decimal.Zero : Convert.ToDecimal(txtAmountPaid.Text);
+                }
+                else
+                {
+                    invoice.PaymentTypeId = 0;
+                    invoice.AmountPaid = decimal.Zero;
+                }
+
+                invoice.Notes = string.IsNullOrEmpty(txtNotes.Text) ? String.Empty : txtNotes.Text;
+                invoice.TotalAmount = TotalValue;
+                invoice.NotesForClient = string.IsNullOrEmpty(txtNoteForClient.Text) ? String.Empty : txtNoteForClient.Text;
+                invoice.PrivateNotes = string.IsNullOrEmpty(txtprivateNotes.Text) ? String.Empty : txtprivateNotes.Text;
+                invoice.Status = true;
+
+                if (invoiceDetails == null || invoiceDetails.InvoiceId == 0)
+                {
+                    using (TransactionScope scope = new TransactionScope())
+                    {
+                        invoiceService.AddInvoice(invoice);
+                        lstInvoiceProduct = lstInvoiceProduct.OrderBy(s => s.InvoiceProductId).ToList<InvoiceProduct>();
+
+                        for (int i = 0; i < lstInvoiceProduct.Count; i++)
+                        {
+                            InvoiceProduct invoiceProduct = new InvoiceProduct();
+                            invoiceProduct.InvoiceId = lstInvoiceProduct[i].InvoiceId;
+                            invoiceProduct.ProductId = lstInvoiceProduct[i].ProductId;
+                            invoiceProduct.ProductName = lstInvoiceProduct[i].ProductName;
+                            invoiceProduct.Description = lstInvoiceProduct[i].Description;
+                            invoiceProduct.Quantity = lstInvoiceProduct[i].Quantity;
+                            invoiceProduct.TaxId = lstInvoiceProduct[i].TaxId;
+                            invoiceProduct.TaxValue = lstInvoiceProduct[i].TaxValue;
+                            invoiceProduct.UnitPrice = lstInvoiceProduct[i].UnitPrice;
+                            invoiceProduct.TotalPrice = lstInvoiceProduct[i].TotalPrice;
+                            invoiceService.AddInvoiceProducts(invoiceProduct);
+                        }
+
+                        scope.Complete();
+                    }
+                }
+                else
+                {
+                    using (TransactionScope scope = new TransactionScope())
+                    {
+                        invoiceService.UpdateInvoice(invoice);
+
+                        for (int i = 0; i < lstInvoiceProduct.Count; i++)
+                        {
+                            InvoiceProduct invoiceProduct = new InvoiceProduct();
+                            invoiceProduct.InvoiceId = lstInvoiceProduct[i].InvoiceId;
+                            invoiceProduct.ProductId = lstInvoiceProduct[i].ProductId;
+                            invoiceProduct.ProductName = lstInvoiceProduct[i].ProductName;
+                            invoiceProduct.Description = lstInvoiceProduct[i].Description;
+                            invoiceProduct.Quantity = lstInvoiceProduct[i].Quantity;
+                            invoiceProduct.TaxId = lstInvoiceProduct[i].TaxId;
+                            invoiceProduct.TaxValue = lstInvoiceProduct[i].TaxValue;
+                            invoiceProduct.UnitPrice = lstInvoiceProduct[i].UnitPrice;
+                            invoiceProduct.TotalPrice = lstInvoiceProduct[i].TotalPrice;
+                            invoiceService.UpdateInvoiceProducts(invoiceProduct);
+                        }
+
+                        scope.Complete();
+                    }
+                }
+
+                CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_ADD_INVOICE_MESSAGE, invoice.InvoiceId),
+                                                              Constants.CONSTANT_INFORMATION,
+                                                              Sleek_Bill.Controls.CustomMessageBox.eDialogButtons.OK,
+                                                              CustomImages.GetDialogImage(Sleek_Bill.Controls.CustomImages.eCustomDialogImages.Success));
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Saving invoice: " + ex.Message);
+            }
         }
     }
 }

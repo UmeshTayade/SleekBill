@@ -25,6 +25,11 @@ namespace DataServices
             return this.invoiceDBObj.GetAllInvoices();
         }
 
+        public List<InvoiceProduct> GetAllInvoiceProducts()
+        {
+            return this.invoiceDBObj.GetAllInvoiceProducts();
+        }
+
         public Invoice GetInvoice(int invoiceId)
         {
             return this.invoiceDBObj.GetInvoice(invoiceId);

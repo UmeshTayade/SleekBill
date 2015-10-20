@@ -22,6 +22,7 @@ namespace BusinessObjects
         public string Notes { get; set; }
         public string NotesForClient { get; set; }
         public string PrivateNotes { get; set; }
+        public string PaymentStatus { get; set; }
         public bool Status { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }

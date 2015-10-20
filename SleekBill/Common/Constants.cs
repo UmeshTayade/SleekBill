@@ -17,5 +17,6 @@ namespace Sleek_Bill.Common
         public static string CONSTANT_CompanyLogo = "CompanyLogo";
         public static string CONSTANT_BTN_UPDATE = "Update";
         public static string CONSTANT_INOVICE_NO = "1";
+        public static string SUCCESSFULL_ADD_INVOICE_MESSAGE = "You have successfully saved Invoice{0}";
     }
 }

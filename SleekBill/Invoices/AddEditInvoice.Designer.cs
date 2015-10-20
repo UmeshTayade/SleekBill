@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAddInvoice = new System.Windows.Forms.TableLayoutPanel();
             this.lblInvoiceData = new System.Windows.Forms.Label();
             this.pnlClient = new System.Windows.Forms.Panel();
@@ -128,8 +128,8 @@
             this.txtNoteForClient = new System.Windows.Forms.TextBox();
             this.txtprivateNotes = new System.Windows.Forms.TextBox();
             this.pnlSaveInvoice = new System.Windows.Forms.Panel();
-            this.btnPreviewInvoice = new System.Windows.Forms.Button();
             this.btnSaveInvoice = new System.Windows.Forms.Button();
+            this.btnPreviewInvoice = new System.Windows.Forms.Button();
             this.tlpAddInvoice.SuspendLayout();
             this.pnlClient.SuspendLayout();
             this.pnlInvoiceNumber.SuspendLayout();
@@ -351,6 +351,7 @@
             // 
             // dtpIssueDate
             // 
+            this.dtpIssueDate.CustomFormat = "dd/MM/yyyy";
             this.dtpIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIssueDate.Location = new System.Drawing.Point(112, 2);
             this.dtpIssueDate.Name = "dtpIssueDate";
@@ -379,6 +380,7 @@
             // 
             // dtpDueDate
             // 
+            this.dtpDueDate.CustomFormat = "__ /__ /____";
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(112, 0);
             this.dtpDueDate.Name = "dtpDueDate";
@@ -551,8 +553,8 @@
             // No
             // 
             this.No.DataPropertyName = "No";
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.No.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.No.DefaultCellStyle = dataGridViewCellStyle10;
             this.No.Frozen = true;
             this.No.HeaderText = "No";
             this.No.Name = "No";
@@ -564,8 +566,8 @@
             // ProductName
             // 
             this.ProductName.DataPropertyName = "ProductName";
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle11;
             this.ProductName.Frozen = true;
             this.ProductName.HeaderText = "Product/Service Name";
             this.ProductName.Name = "ProductName";
@@ -577,8 +579,8 @@
             // Description
             // 
             this.Description.DataPropertyName = "Description";
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.DefaultCellStyle = dataGridViewCellStyle12;
             this.Description.Frozen = true;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
@@ -590,8 +592,8 @@
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle13;
             this.Quantity.Frozen = true;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
@@ -603,8 +605,8 @@
             // UnitPrice
             // 
             this.UnitPrice.DataPropertyName = "UnitPrice";
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPrice.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitPrice.DefaultCellStyle = dataGridViewCellStyle14;
             this.UnitPrice.Frozen = true;
             this.UnitPrice.HeaderText = "UnitPrice";
             this.UnitPrice.Name = "UnitPrice";
@@ -615,8 +617,8 @@
             // Value
             // 
             this.Value.DataPropertyName = "Value";
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Value.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Value.DefaultCellStyle = dataGridViewCellStyle15;
             this.Value.Frozen = true;
             this.Value.HeaderText = "Amount";
             this.Value.Name = "Value";
@@ -627,8 +629,8 @@
             // Tax
             // 
             this.Tax.DataPropertyName = "Tax";
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tax.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tax.DefaultCellStyle = dataGridViewCellStyle16;
             this.Tax.Frozen = true;
             this.Tax.HeaderText = "Tax";
             this.Tax.Name = "Tax";
@@ -638,13 +640,13 @@
             // 
             // Edit
             // 
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle17;
             this.Edit.FillWeight = 75F;
             this.Edit.Frozen = true;
             this.Edit.HeaderText = "";
@@ -658,12 +660,12 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle18;
             this.Delete.FillWeight = 75F;
             this.Delete.Frozen = true;
             this.Delete.HeaderText = "";
@@ -851,12 +853,6 @@
             // cmbPaymentType
             // 
             this.cmbPaymentType.FormattingEnabled = true;
-            this.cmbPaymentType.Items.AddRange(new object[] {
-            "Cash",
-            "Credit Card",
-            "Check",
-            "Bank Transfer",
-            "Other"});
             this.cmbPaymentType.Location = new System.Drawing.Point(113, 2);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(177, 23);
@@ -1219,17 +1215,6 @@
             this.pnlSaveInvoice.Size = new System.Drawing.Size(318, 64);
             this.pnlSaveInvoice.TabIndex = 30;
             // 
-            // btnPreviewInvoice
-            // 
-            this.btnPreviewInvoice.Location = new System.Drawing.Point(3, 29);
-            this.btnPreviewInvoice.Margin = new System.Windows.Forms.Padding(170, 30, 0, 0);
-            this.btnPreviewInvoice.Name = "btnPreviewInvoice";
-            this.btnPreviewInvoice.Size = new System.Drawing.Size(139, 32);
-            this.btnPreviewInvoice.TabIndex = 62;
-            this.btnPreviewInvoice.Text = "Preview Invoice";
-            this.btnPreviewInvoice.UseVisualStyleBackColor = true;
-            this.btnPreviewInvoice.Click += new System.EventHandler(this.btnPreviewInvoice_Click_1);
-            // 
             // btnSaveInvoice
             // 
             this.btnSaveInvoice.Location = new System.Drawing.Point(164, 29);
@@ -1240,6 +1225,17 @@
             this.btnSaveInvoice.Text = "Save Invoice";
             this.btnSaveInvoice.UseVisualStyleBackColor = true;
             this.btnSaveInvoice.Click += new System.EventHandler(this.btnSaveInvoice_Click);
+            // 
+            // btnPreviewInvoice
+            // 
+            this.btnPreviewInvoice.Location = new System.Drawing.Point(3, 29);
+            this.btnPreviewInvoice.Margin = new System.Windows.Forms.Padding(170, 30, 0, 0);
+            this.btnPreviewInvoice.Name = "btnPreviewInvoice";
+            this.btnPreviewInvoice.Size = new System.Drawing.Size(139, 32);
+            this.btnPreviewInvoice.TabIndex = 62;
+            this.btnPreviewInvoice.Text = "Preview Invoice";
+            this.btnPreviewInvoice.UseVisualStyleBackColor = true;
+            this.btnPreviewInvoice.Click += new System.EventHandler(this.btnPreviewInvoice_Click_1);
             // 
             // AddEditInvoice
             // 

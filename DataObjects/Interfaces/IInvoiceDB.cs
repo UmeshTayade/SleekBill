@@ -11,6 +11,7 @@ namespace DataObjects.Interfaces
         int AddInvoice(Invoice invoice);
         void AddInvoiceProducts(InvoiceProduct invoiceProduct);
         List<Invoice> GetAllInvoices();
+        List<InvoiceProduct> GetAllInvoiceProducts();
         Invoice GetInvoice(int invoiceId);
         List<InvoiceProduct> GetInvoiceProductsByInvoiceId(int invoiceId);
         void UpdateInvoice(Invoice invoice);

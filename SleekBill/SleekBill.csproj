@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ePaymentStatus.cs" />
+    <Compile Include="Common\ePaymentType.cs" />
     <Compile Include="Common\FormState.cs" />
     <Compile Include="Common\PaymentTerms.cs" />
     <Compile Include="Company\EditCompanyDetails.cs">

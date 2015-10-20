@@ -41,10 +41,8 @@ namespace DataObjects.ADO.Net
 
         public void AddInvoiceProducts(InvoiceProduct invoiceProduct)
         {
-            DbParameter parameter = null;
             Db.ExecuteNonQuery("usp_Invoice_InsertInvoiceProducts", CommandType.StoredProcedure,
-                new DbParameter[] { 
-                               parameter,
+                new DbParameter[] {
                                Db.CreateParameter("InvoiceId", invoiceProduct.InvoiceId),
                                Db.CreateParameter("ProductId", invoiceProduct.ProductId),
                                Db.CreateParameter("ProductName", invoiceProduct.ProductName),
@@ -62,6 +60,11 @@ namespace DataObjects.ADO.Net
             return Db.MapReader<Invoice>("usp_Invoice_GetAllInvoices", CommandType.StoredProcedure, new DbParameter[0]);
         }
 
+        public List<InvoiceProduct> GetAllInvoiceProducts()
+        {
+            return Db.MapReader<InvoiceProduct>("usp_Invoice_GetAllInvoiceProducts", CommandType.StoredProcedure, new DbParameter[0]);
+        }
+
         public Invoice GetInvoice(int invoiceId)
         {
             return Db.Map<Invoice>("usp_Invoice_GetInvoiceDetails", CommandType.StoredProcedure, new DbParameter[] { Db.CreateParameter("InvoiceId", invoiceId) });
@@ -74,10 +77,8 @@ namespace DataObjects.ADO.Net
 
         public void UpdateInvoice(Invoice invoice)
         {
-            using (TransactionScope scope = new TransactionScope())
-            {
-                Db.ExecuteNonQuery("usp_Invoice_UpdateInvoice", CommandType.StoredProcedure,
-                    new DbParameter[] { 
+            Db.ExecuteNonQuery("usp_Invoice_UpdateInvoice", CommandType.StoredProcedure,
+                new DbParameter[] { 
                                Db.CreateParameter("InvoiceId", invoice.InvoiceId),
                                Db.CreateParameter("CompanyId", invoice.CompanyId),
                                Db.CreateParameter("ClientId", invoice.ClientId),                               
@@ -96,8 +97,6 @@ namespace DataObjects.ADO.Net
                                Db.CreateParameter("PrivateNotes", invoice.PrivateNotes)
                                
                  });
-                scope.Complete();
-            }
         }
 
         public void UpdateInvoiceProducts(InvoiceProduct invoiceProduct)

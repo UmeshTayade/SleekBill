@@ -7,6 +7,7 @@ namespace BusinessObjects
 {
     public class InvoiceProduct
     {
+        public int InvoiceProductId { get; set; }
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }

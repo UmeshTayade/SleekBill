@@ -41,9 +41,9 @@
             this.lblQuickSearch = new System.Windows.Forms.Label();
             this.txtQuickSearch = new System.Windows.Forms.TextBox();
             this.pnlIssueBetween = new System.Windows.Forms.Panel();
-            this.dtpIssueBetn1 = new System.Windows.Forms.DateTimePicker();
-            this.lblAnd1 = new System.Windows.Forms.Label();
             this.dtpissueBetn2 = new System.Windows.Forms.DateTimePicker();
+            this.lblAnd1 = new System.Windows.Forms.Label();
+            this.dtpIssueBetn1 = new System.Windows.Forms.DateTimePicker();
             this.pnlDueBetween = new System.Windows.Forms.Panel();
             this.dtpDueBetn2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,12 +55,36 @@
             this.lblResults = new System.Windows.Forms.Label();
             this.btnNewInvoice = new System.Windows.Forms.Button();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IssueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrivateNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.lblSeperator = new System.Windows.Forms.Label();
+            this.txtPageEnd = new System.Windows.Forms.TextBox();
+            this.txtPageStart = new System.Windows.Forms.TextBox();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.txtResultsPerPage = new System.Windows.Forms.TextBox();
+            this.lblPaging = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlIssueBetween.SuspendLayout();
             this.pnlDueBetween.SuspendLayout();
             this.pnlSearhinvoices.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,7 +118,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(946, 168);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1170, 168);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblSearchInvoices
@@ -145,7 +169,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.cmbClientName, 2);
             this.cmbClientName.FormattingEnabled = true;
-            this.cmbClientName.Location = new System.Drawing.Point(125, 36);
+            this.cmbClientName.Location = new System.Drawing.Point(154, 36);
             this.cmbClientName.Name = "cmbClientName";
             this.cmbClientName.Size = new System.Drawing.Size(340, 23);
             this.cmbClientName.TabIndex = 5;
@@ -153,7 +177,7 @@
             // txtInvoiceNumber
             // 
             this.txtInvoiceNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtInvoiceNumber.Location = new System.Drawing.Point(127, 71);
+            this.txtInvoiceNumber.Location = new System.Drawing.Point(156, 71);
             this.txtInvoiceNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
             this.txtInvoiceNumber.Size = new System.Drawing.Size(182, 23);
@@ -163,7 +187,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.cmbStatus, 2);
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(125, 102);
+            this.cmbStatus.Location = new System.Drawing.Point(154, 102);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(184, 23);
             this.cmbStatus.TabIndex = 8;
@@ -172,7 +196,7 @@
             // 
             this.lblIssuedBetween.AutoSize = true;
             this.lblIssuedBetween.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblIssuedBetween.Location = new System.Drawing.Point(492, 43);
+            this.lblIssuedBetween.Location = new System.Drawing.Point(608, 43);
             this.lblIssuedBetween.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lblIssuedBetween.Name = "lblIssuedBetween";
             this.lblIssuedBetween.Size = new System.Drawing.Size(91, 15);
@@ -183,7 +207,7 @@
             // 
             this.lblDueBetween.AutoSize = true;
             this.lblDueBetween.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblDueBetween.Location = new System.Drawing.Point(492, 76);
+            this.lblDueBetween.Location = new System.Drawing.Point(608, 76);
             this.lblDueBetween.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lblDueBetween.Name = "lblDueBetween";
             this.lblDueBetween.Size = new System.Drawing.Size(76, 15);
@@ -194,7 +218,7 @@
             // 
             this.lblQuickSearch.AutoSize = true;
             this.lblQuickSearch.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblQuickSearch.Location = new System.Drawing.Point(492, 109);
+            this.lblQuickSearch.Location = new System.Drawing.Point(608, 109);
             this.lblQuickSearch.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lblQuickSearch.Name = "lblQuickSearch";
             this.lblQuickSearch.Size = new System.Drawing.Size(79, 15);
@@ -205,7 +229,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txtQuickSearch, 2);
             this.txtQuickSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtQuickSearch.Location = new System.Drawing.Point(611, 104);
+            this.txtQuickSearch.Location = new System.Drawing.Point(755, 104);
             this.txtQuickSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtQuickSearch.Name = "txtQuickSearch";
             this.txtQuickSearch.Size = new System.Drawing.Size(311, 23);
@@ -217,18 +241,20 @@
             this.pnlIssueBetween.Controls.Add(this.dtpissueBetn2);
             this.pnlIssueBetween.Controls.Add(this.lblAnd1);
             this.pnlIssueBetween.Controls.Add(this.dtpIssueBetn1);
-            this.pnlIssueBetween.Location = new System.Drawing.Point(609, 36);
+            this.pnlIssueBetween.Location = new System.Drawing.Point(753, 36);
             this.pnlIssueBetween.Name = "pnlIssueBetween";
             this.pnlIssueBetween.Size = new System.Drawing.Size(334, 27);
             this.pnlIssueBetween.TabIndex = 13;
             // 
-            // dtpIssueBetn1
+            // dtpissueBetn2
             // 
-            this.dtpIssueBetn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIssueBetn1.Location = new System.Drawing.Point(1, 0);
-            this.dtpIssueBetn1.Name = "dtpIssueBetn1";
-            this.dtpIssueBetn1.Size = new System.Drawing.Size(136, 23);
-            this.dtpIssueBetn1.TabIndex = 0;
+            this.dtpissueBetn2.CustomFormat = "dd/MM/yyyy";
+            this.dtpissueBetn2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpissueBetn2.Location = new System.Drawing.Point(169, 1);
+            this.dtpissueBetn2.Name = "dtpissueBetn2";
+            this.dtpissueBetn2.Size = new System.Drawing.Size(144, 23);
+            this.dtpissueBetn2.TabIndex = 1;
+            this.dtpissueBetn2.Value = new System.DateTime(2015, 10, 20, 12, 4, 45, 0);
             // 
             // lblAnd1
             // 
@@ -241,13 +267,15 @@
             this.lblAnd1.TabIndex = 5;
             this.lblAnd1.Text = "and";
             // 
-            // dtpissueBetn2
+            // dtpIssueBetn1
             // 
-            this.dtpissueBetn2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpissueBetn2.Location = new System.Drawing.Point(169, 1);
-            this.dtpissueBetn2.Name = "dtpissueBetn2";
-            this.dtpissueBetn2.Size = new System.Drawing.Size(144, 23);
-            this.dtpissueBetn2.TabIndex = 1;
+            this.dtpIssueBetn1.CustomFormat = "dd/MM/yyyy";
+            this.dtpIssueBetn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpIssueBetn1.Location = new System.Drawing.Point(1, 0);
+            this.dtpIssueBetn1.Name = "dtpIssueBetn1";
+            this.dtpIssueBetn1.Size = new System.Drawing.Size(136, 23);
+            this.dtpIssueBetn1.TabIndex = 0;
+            this.dtpIssueBetn1.Value = new System.DateTime(2015, 10, 20, 12, 2, 59, 0);
             // 
             // pnlDueBetween
             // 
@@ -255,13 +283,14 @@
             this.pnlDueBetween.Controls.Add(this.dtpDueBetn2);
             this.pnlDueBetween.Controls.Add(this.label1);
             this.pnlDueBetween.Controls.Add(this.dtpDueBetn1);
-            this.pnlDueBetween.Location = new System.Drawing.Point(609, 69);
+            this.pnlDueBetween.Location = new System.Drawing.Point(753, 69);
             this.pnlDueBetween.Name = "pnlDueBetween";
             this.pnlDueBetween.Size = new System.Drawing.Size(334, 27);
             this.pnlDueBetween.TabIndex = 14;
             // 
             // dtpDueBetn2
             // 
+            this.dtpDueBetn2.CustomFormat = "__ /__ /____";
             this.dtpDueBetn2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueBetn2.Location = new System.Drawing.Point(169, 1);
             this.dtpDueBetn2.Name = "dtpDueBetn2";
@@ -281,6 +310,7 @@
             // 
             // dtpDueBetn1
             // 
+            this.dtpDueBetn1.CustomFormat = "__ /__ /____";
             this.dtpDueBetn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueBetn1.Location = new System.Drawing.Point(1, 0);
             this.dtpDueBetn1.Name = "dtpDueBetn1";
@@ -292,7 +322,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.pnlSearhinvoices, 2);
             this.pnlSearhinvoices.Controls.Add(this.btnSearch);
             this.pnlSearhinvoices.Controls.Add(this.btnReset);
-            this.pnlSearhinvoices.Location = new System.Drawing.Point(317, 135);
+            this.pnlSearhinvoices.Location = new System.Drawing.Point(392, 135);
             this.pnlSearhinvoices.Name = "pnlSearhinvoices";
             this.pnlSearhinvoices.Size = new System.Drawing.Size(286, 30);
             this.pnlSearhinvoices.TabIndex = 15;
@@ -306,6 +336,7 @@
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnReset
             // 
@@ -325,13 +356,15 @@
             this.tableLayoutPanel2.Controls.Add(this.lblResults, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnNewInvoice, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.dgvInvoices, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 197);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76502F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76502F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.46996F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(946, 311);
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.5261F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.93248F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.84566F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.53055F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1170, 311);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblResults
@@ -341,13 +374,13 @@
             this.lblResults.Location = new System.Drawing.Point(5, 10);
             this.lblResults.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(57, 19);
+            this.lblResults.Size = new System.Drawing.Size(57, 17);
             this.lblResults.TabIndex = 2;
             this.lblResults.Text = "Results";
             // 
             // btnNewInvoice
             // 
-            this.btnNewInvoice.Location = new System.Drawing.Point(848, 41);
+            this.btnNewInvoice.Location = new System.Drawing.Point(1048, 37);
             this.btnNewInvoice.Margin = new System.Windows.Forms.Padding(5);
             this.btnNewInvoice.Name = "btnNewInvoice";
             this.btnNewInvoice.Size = new System.Drawing.Size(93, 23);
@@ -358,24 +391,270 @@
             // 
             // dgvInvoices
             // 
+            this.dgvInvoices.AllowUserToAddRows = false;
+            this.dgvInvoices.AllowUserToDeleteRows = false;
+            this.dgvInvoices.AllowUserToResizeColumns = false;
+            this.dgvInvoices.AllowUserToResizeRows = false;
+            this.dgvInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvInvoices.BackgroundColor = System.Drawing.Color.White;
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.No,
+            this.ClientName,
+            this.InvoiceNo,
+            this.IssueDate,
+            this.DueDate,
+            this.Amount,
+            this.Tax,
+            this.Total,
+            this.Status,
+            this.PrivateNotes,
+            this.AmountPaid,
+            this.Balance,
+            this.Edit,
+            this.View});
             this.tableLayoutPanel2.SetColumnSpan(this.dgvInvoices, 2);
-            this.dgvInvoices.Location = new System.Drawing.Point(3, 75);
+            this.dgvInvoices.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvInvoices.Location = new System.Drawing.Point(3, 69);
             this.dgvInvoices.Name = "dgvInvoices";
-            this.dgvInvoices.Size = new System.Drawing.Size(940, 233);
+            this.dgvInvoices.RowHeadersVisible = false;
+            this.dgvInvoices.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInvoices.ShowEditingIcon = false;
+            this.dgvInvoices.Size = new System.Drawing.Size(1164, 205);
             this.dgvInvoices.TabIndex = 13;
+            this.dgvInvoices.Tag = "";
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "No";
+            this.No.Frozen = true;
+            this.No.HeaderText = "No.";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.Frozen = true;
+            this.ClientName.HeaderText = "Client Name";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // InvoiceNo
+            // 
+            this.InvoiceNo.DataPropertyName = "invoiceNo";
+            this.InvoiceNo.Frozen = true;
+            this.InvoiceNo.HeaderText = "Invoice No";
+            this.InvoiceNo.Name = "InvoiceNo";
+            this.InvoiceNo.ReadOnly = true;
+            this.InvoiceNo.Width = 90;
+            // 
+            // IssueDate
+            // 
+            this.IssueDate.DataPropertyName = "IssueDate";
+            this.IssueDate.Frozen = true;
+            this.IssueDate.HeaderText = "Issue Date";
+            this.IssueDate.Name = "IssueDate";
+            this.IssueDate.ReadOnly = true;
+            this.IssueDate.Width = 90;
+            // 
+            // DueDate
+            // 
+            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.Frozen = true;
+            this.DueDate.HeaderText = "Due Date";
+            this.DueDate.Name = "DueDate";
+            this.DueDate.ReadOnly = true;
+            this.DueDate.Width = 90;
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.Frozen = true;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 75;
+            // 
+            // Tax
+            // 
+            this.Tax.DataPropertyName = "Tax";
+            this.Tax.Frozen = true;
+            this.Tax.HeaderText = "Tax";
+            this.Tax.Name = "Tax";
+            this.Tax.ReadOnly = true;
+            this.Tax.Width = 75;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.Frozen = true;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 75;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.Frozen = true;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 75;
+            // 
+            // PrivateNotes
+            // 
+            this.PrivateNotes.DataPropertyName = "PrivateNotes";
+            this.PrivateNotes.Frozen = true;
+            this.PrivateNotes.HeaderText = "Private Notes";
+            this.PrivateNotes.Name = "PrivateNotes";
+            this.PrivateNotes.ReadOnly = true;
+            this.PrivateNotes.Width = 110;
+            // 
+            // AmountPaid
+            // 
+            this.AmountPaid.DataPropertyName = "AmountPaid";
+            this.AmountPaid.Frozen = true;
+            this.AmountPaid.HeaderText = "Amount Paid";
+            this.AmountPaid.Name = "AmountPaid";
+            this.AmountPaid.ReadOnly = true;
+            this.AmountPaid.Width = 110;
+            // 
+            // Balance
+            // 
+            this.Balance.DataPropertyName = "Balance";
+            this.Balance.Frozen = true;
+            this.Balance.HeaderText = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
+            this.Balance.Width = 75;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 75F;
+            this.Edit.Frozen = true;
+            this.Edit.HeaderText = "";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit Invoice";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 70;
+            // 
+            // View
+            // 
+            this.View.FillWeight = 75F;
+            this.View.Frozen = true;
+            this.View.HeaderText = "";
+            this.View.Name = "View";
+            this.View.ReadOnly = true;
+            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.View.Text = "Delete";
+            this.View.ToolTipText = "Delete Invoice";
+            this.View.UseColumnTextForButtonValue = true;
+            this.View.Width = 70;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnRight);
+            this.panel2.Controls.Add(this.btnLeft);
+            this.panel2.Controls.Add(this.lblSeperator);
+            this.panel2.Controls.Add(this.txtPageEnd);
+            this.panel2.Controls.Add(this.txtPageStart);
+            this.panel2.Controls.Add(this.btnApply);
+            this.panel2.Controls.Add(this.txtResultsPerPage);
+            this.panel2.Controls.Add(this.lblPaging);
+            this.panel2.Location = new System.Drawing.Point(3, 280);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(750, 28);
+            this.panel2.TabIndex = 15;
+            // 
+            // btnRight
+            // 
+            this.btnRight.Image = global::Sleek_Bill.Properties.Resources.ico_right;
+            this.btnRight.Location = new System.Drawing.Point(432, 3);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(32, 23);
+            this.btnRight.TabIndex = 16;
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Image = global::Sleek_Bill.Properties.Resources.Left;
+            this.btnLeft.Location = new System.Drawing.Point(290, 3);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(32, 23);
+            this.btnLeft.TabIndex = 15;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            // 
+            // lblSeperator
+            // 
+            this.lblSeperator.AutoSize = true;
+            this.lblSeperator.Location = new System.Drawing.Point(369, 7);
+            this.lblSeperator.Name = "lblSeperator";
+            this.lblSeperator.Size = new System.Drawing.Size(12, 15);
+            this.lblSeperator.TabIndex = 14;
+            this.lblSeperator.Text = "/";
+            // 
+            // txtPageEnd
+            // 
+            this.txtPageEnd.Location = new System.Drawing.Point(386, 3);
+            this.txtPageEnd.Name = "txtPageEnd";
+            this.txtPageEnd.Size = new System.Drawing.Size(37, 23);
+            this.txtPageEnd.TabIndex = 13;
+            // 
+            // txtPageStart
+            // 
+            this.txtPageStart.Location = new System.Drawing.Point(328, 3);
+            this.txtPageStart.Name = "txtPageStart";
+            this.txtPageStart.Size = new System.Drawing.Size(37, 23);
+            this.txtPageStart.TabIndex = 12;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(171, 3);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 11;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // txtResultsPerPage
+            // 
+            this.txtResultsPerPage.Location = new System.Drawing.Point(113, 3);
+            this.txtResultsPerPage.Name = "txtResultsPerPage";
+            this.txtResultsPerPage.Size = new System.Drawing.Size(37, 23);
+            this.txtResultsPerPage.TabIndex = 10;
+            this.txtResultsPerPage.Text = "5";
+            // 
+            // lblPaging
+            // 
+            this.lblPaging.AutoSize = true;
+            this.lblPaging.Location = new System.Drawing.Point(4, 6);
+            this.lblPaging.Name = "lblPaging";
+            this.lblPaging.Size = new System.Drawing.Size(103, 15);
+            this.lblPaging.TabIndex = 9;
+            this.lblPaging.Text = "Results Per Page :";
             // 
             // InvoicesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(970, 520);
+            this.ClientSize = new System.Drawing.Size(1194, 551);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkCyan;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "InvoicesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -391,6 +670,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -424,5 +705,28 @@
         private System.Windows.Forms.Label lblResults;
         private System.Windows.Forms.Button btnNewInvoice;
         private System.Windows.Forms.DataGridView dgvInvoices;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.Label lblSeperator;
+        private System.Windows.Forms.TextBox txtPageEnd;
+        private System.Windows.Forms.TextBox txtPageStart;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.TextBox txtResultsPerPage;
+        private System.Windows.Forms.Label lblPaging;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IssueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrivateNotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AmountPaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn View;
     }
 }

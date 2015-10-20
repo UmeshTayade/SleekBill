@@ -14,6 +14,7 @@ namespace DataServices.Interfaces
         [DataObjectMethod(DataObjectMethodType.Insert)]
         void AddInvoiceProducts(InvoiceProduct invoiceProduct);
         List<Invoice> GetAllInvoices();
+        List<InvoiceProduct> GetAllInvoiceProducts();
         [DataObjectMethod(DataObjectMethodType.Select)]
         Invoice GetInvoice(int invoiceId);
         List<InvoiceProduct> GetInvoiceProductsByInvoiceId(int invoiceId);
