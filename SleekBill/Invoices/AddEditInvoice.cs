@@ -135,7 +135,7 @@ namespace Sleek_Bill.Invoices
             List<PaymentTerms> lstPaymentTerms = masterService.GetAllPaymentTerms();
             cmbPaymentTerms.DataSource = lstPaymentTerms;
             cmbPaymentTerms.DisplayMember = "PaymentTermName";
-            cmbPaymentTerms.ValueMember = "PaymentTerm";
+            cmbPaymentTerms.ValueMember = "PaymentTermId";
         }
 
         private void BindClientNameDropdown()
@@ -211,22 +211,21 @@ namespace Sleek_Bill.Invoices
             lblSubtotalValue.Text = subTotal.ToString();
             lblTaxValue.Text = serviceTax.ToString();
             lblDiscountValue.Text = "- " + discountValue.ToString();
+            decimal roundedValue = decimal.Zero;
 
             if (chkRoundOff.Checked)
             {
-                decimal roundedValue = Math.Round(TotalValue);
+                roundedValue = Math.Round(TotalValue);
                 decimal value = roundedValue - TotalValue;
+                TotalValue = roundedValue;
                 lblRoundedOffValue.Text = Convert.ToString(value);
-                lblTotalValue.Text = Convert.ToString(roundedValue);
             }
-            else
-            {
-                lblTotalValue.Text = Convert.ToString(TotalValue);
-            }
+
+            lblTotalValue.Text = Convert.ToString(TotalValue);
 
             if (chkMarkInvoicePaid.Checked)
             {
-                txtAmountPaid.Text = (TotalValue - shippingAndPackaging).ToString();
+                txtAmountPaid.Text = TotalValue.ToString();
             }
         }
 
@@ -271,10 +270,9 @@ namespace Sleek_Bill.Invoices
 
         private void GenerateInvoicePDF()
         {
+            Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
             try
             {
-                Document document = new Document(PageSize.A4, 20f, 20f, 10f, 0f);
-
                 if (!Directory.Exists(InvoiceFolderPath))
                 {
                     Directory.CreateDirectory(InvoiceFolderPath);
@@ -331,6 +329,11 @@ namespace Sleek_Bill.Invoices
             }
             catch (Exception ex)
             {
+                if (document.IsOpen())
+                {
+                    document.CloseDocument();
+                }
+
                 MessageBox.Show("Error previwing Invoice :" + ex.Message);
             }
         }
@@ -371,7 +374,7 @@ namespace Sleek_Bill.Invoices
                 AddCustomCell(pdfTable, lblDiscountValue.Text, 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_RIGHT);
             }
 
-            AddCustomCell(pdfTable, "Shipping & Packaging", 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_LEFT);
+            AddCustomCell(pdfTable, "Shipping & Packaging", 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 40f, PdfPCell.ALIGN_LEFT);
             AddCustomCell(pdfTable, txtShippingnPackaging.Text, 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_RIGHT);
 
             if (chkRoundOff.Checked)
@@ -380,9 +383,9 @@ namespace Sleek_Bill.Invoices
                 AddCustomCell(pdfTable, lblRoundedOffValue.Text, 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_RIGHT);
             }
 
-            AddCustomCell(pdfTable, "Total Invoice", 1, 1, BaseColor.WHITE, new BaseColor(51, 102, 153), 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_LEFT);
-            AddCustomCell(pdfTable, lblTotalValue.Text, 1, 1, BaseColor.WHITE, new BaseColor(51, 102, 153), 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_RIGHT);
-            AddCustomCell(pdfTable, Common.Common.ConvertDecimalToWord(lblTotalValue.Text), 2, 2, BaseColor.DARK_GRAY, BaseColor.WHITE, 10, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_LEFT);
+            AddCustomCell(pdfTable, "Total Invoice", 1, 1, BaseColor.WHITE, new BaseColor(51, 102, 153), 14, iTextSharp.text.Font.NORMAL, 40f, PdfPCell.ALIGN_LEFT);
+            AddCustomCell(pdfTable, lblTotalValue.Text, 1, 1, BaseColor.WHITE, new BaseColor(51, 102, 153), 14, iTextSharp.text.Font.NORMAL, 40f, PdfPCell.ALIGN_RIGHT);
+            AddCustomCell(pdfTable, Common.Common.ConvertDecimalToWord(lblTotalValue.Text), 2, 2, BaseColor.DARK_GRAY, BaseColor.WHITE, 12, iTextSharp.text.Font.NORMAL, 40f, PdfPCell.ALIGN_LEFT);
             AddCustomCell(pdfTable, String.Empty, 1, 2, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 20f, PdfPCell.ALIGN_RIGHT);
 
             return pdfTable;
@@ -503,7 +506,7 @@ namespace Sleek_Bill.Invoices
             AddCustomCell(pdfTable, "Invoice Date", 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_LEFT);
             AddCustomCell(pdfTable, DateTime.Now.Date.ToString("MMMM dd,yyyy"), 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_RIGHT);
             AddCustomCell(pdfTable, "Due Date", 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_LEFT);
-            AddCustomCell(pdfTable, Convert.ToDateTime(dtpDueDate.Text).ToString("MMMM dd,yyyy"), 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_RIGHT);
+            AddCustomCell(pdfTable, Convert.ToDateTime(dtpDueDate.Value).ToString("MMMM dd,yyyy"), 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_RIGHT);
             AddCustomCell(pdfTable, "P.O. Number", 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_LEFT);
             AddCustomCell(pdfTable, txtPONumber.Text, 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_RIGHT);
             AddCustomCell(pdfTable, String.Empty, 1, 1, BaseColor.DARK_GRAY, BaseColor.WHITE, 14, iTextSharp.text.Font.NORMAL, 25f, PdfPCell.ALIGN_LEFT);
@@ -538,8 +541,6 @@ namespace Sleek_Bill.Invoices
                     Image image = Image.GetInstance(logoUrl);
                     //Resize image depend upon your need
                     image.ScaleToFit(140f, 120f);
-                    //Give space before image
-                    image.SpacingBefore = 10f;
                     //Give some space after the image
                     image.SpacingAfter = 10f;
                     image.Alignment = Element.ALIGN_LEFT;
@@ -821,23 +822,22 @@ namespace Sleek_Bill.Invoices
 
         private void cmbPaymentTerms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime dtIssueDate = Convert.ToDateTime(dtpIssueDate.Text);
+            DateTime dtIssueDate = Convert.ToDateTime(dtpIssueDate.Value);
             int days = 0;
 
             if (cmbPaymentTerms.SelectedIndex == 0)
             {
-                dtpDueDate.Text = DateTime.Now.Date.ToShortDateString();
                 dtpDueDate.Enabled = true;
             }
             else if (cmbPaymentTerms.SelectedIndex == 1)
             {
-                dtpDueDate.Text = dtIssueDate.ToShortDateString();
+                dtpDueDate.Value = dtIssueDate;
                 dtpDueDate.Enabled = false;
             }
             else
             {
                 days = Convert.ToInt32(cmbPaymentTerms.SelectedValue);
-                dtpDueDate.Text = dtIssueDate.Date.AddDays(days).ToShortDateString();
+                dtpDueDate.Value = dtIssueDate.Date.AddDays(days);
                 dtpDueDate.Enabled = false;
             }
         }
@@ -866,10 +866,10 @@ namespace Sleek_Bill.Invoices
                 invoice.InvoiceId = invoiceId;
                 invoice.CompanyId = comapnyDetails.CompanyId;
                 invoice.ClientId = ClientId;
-                invoice.IssueDate = string.IsNullOrEmpty(dtpIssueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpIssueDate.Text).Date;
+                invoice.IssueDate = dtpIssueDate.Value.Date;
                 invoice.PurchaseOrderNo = string.IsNullOrEmpty(txtPONumber.Text) ? String.Empty : txtPONumber.Text;
                 invoice.PaymentTermId = Convert.ToInt32(cmbPaymentTerms.SelectedValue);
-                invoice.DueDate = string.IsNullOrEmpty(dtpDueDate.Text) ? DateTime.Now.Date : Convert.ToDateTime(dtpDueDate.Text).Date;
+                invoice.DueDate = dtpDueDate.Value.Date;
                 invoice.Discount = string.IsNullOrEmpty(txtDiscount.Text) ? decimal.Zero : Convert.ToDecimal(txtDiscount.Text);
                 invoice.RoundOffTotal = chkRoundOff.Checked;
                 invoice.MarkInvoicePaid = chkMarkInvoicePaid.Checked;
@@ -878,6 +878,60 @@ namespace Sleek_Bill.Invoices
                 {
                     invoice.PaymentTypeId = Convert.ToInt32(cmbPaymentType.SelectedValue);
                     invoice.AmountPaid = string.IsNullOrEmpty(txtAmountPaid.Text) ? decimal.Zero : Convert.ToDecimal(txtAmountPaid.Text);
+
+                    if (invoiceDetails == null || invoiceDetails.InvoiceId == 0)
+                    {
+                        invoice.PaymentDate = DateTime.Now.Date;
+                    }
+                    else
+                    {
+                        if (invoiceDetails.AmountPaid > 0)
+                        {
+                            if (invoiceDetails.AmountPaid == invoice.AmountPaid)
+                            {
+                                invoice.PaymentDate = invoiceDetails.PaymentDate;
+                            }
+                            else
+                            {
+                                invoice.PaymentDate = DateTime.Now.Date;
+                            }
+                        }
+                    }
+                    string paymentStatus = String.Empty;
+
+                    if (invoice.AmountPaid == 0)
+                    {
+                        paymentStatus = ePaymentStatus.Unpaid.ToString();
+                    }
+                    else if (invoice.AmountPaid > 0)
+                    {
+                        if (invoice.AmountPaid < TotalValue)
+                        {
+                            paymentStatus = ePaymentStatus.Partial.ToString();
+                        }
+                        else if (invoice.AmountPaid == TotalValue)
+                        {
+                            paymentStatus = ePaymentStatus.Paid.ToString();
+                        }
+                        else
+                        {
+                            paymentStatus = ePaymentStatus.Paid.ToString();
+                        }
+                    }
+
+                    if (invoice.PaymentDate.Date > invoice.DueDate.Date)
+                    {
+                        if (String.IsNullOrEmpty(paymentStatus))
+                        {
+                            paymentStatus = String.Concat(paymentStatus, ",", ePaymentStatus.Overdue.ToString());
+                        }
+                        else
+                        {
+                            paymentStatus = ePaymentStatus.Overdue.ToString();
+                        }
+                    }
+
+                    invoice.PaymentStatus = paymentStatus;
                 }
                 else
                 {
@@ -950,6 +1004,15 @@ namespace Sleek_Bill.Invoices
             catch (Exception ex)
             {
                 MessageBox.Show("Error Saving invoice: " + ex.Message);
+            }
+        }
+
+        private void dtpDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender != null && sender.GetType() == typeof(DateTimePicker))
+            {
+                dtpDueDate.Format = DateTimePickerFormat.Custom;
+                dtpDueDate.CustomFormat = "dd/MM/yyyy";
             }
         }
     }

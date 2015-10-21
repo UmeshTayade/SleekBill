@@ -18,6 +18,7 @@ namespace BusinessObjects
         public bool MarkInvoicePaid { get; set; }
         public int PaymentTypeId { get; set; }
         public decimal AmountPaid { get; set; }
+        public DateTime PaymentDate { get; set; }
         public decimal TotalAmount { get; set; }
         public string Notes { get; set; }
         public string NotesForClient { get; set; }

@@ -75,7 +75,7 @@ namespace Sleek_Bill.Common
                 _number = (NameOfNumber(Number));
                 _deciml = (NameOfNumber(deciml));
 
-                return currency + _number.Trim() + " Rupees and " + _deciml.Trim() + _currency;
+                return currency + _number.Trim() + " Rupees And " + _deciml.Trim() + _currency;
             }
 
             if ((no[0] != null) && (no[1] == "00"))
@@ -164,7 +164,7 @@ namespace Sleek_Bill.Common
 
             if ((d1 >= 1))
             {
-                OutPut += SNu[d1] + " hundred ";
+                OutPut += SNu[d1] + " Hundred ";
             }
 
             if ((double.Parse(Argument.Substring(1, 2)) < 20))
